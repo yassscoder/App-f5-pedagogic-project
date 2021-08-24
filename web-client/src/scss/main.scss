@@ -1,0 +1,30 @@
+$Primary-Color: #000000;
+$Secondary-Color: #FF8000;
+$third-Color: #D8D5D5;
+$fourth-Color: #FFFBFB;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-main {
+  width: 100%;
+  background: $Primary-Color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+
+  &__item {
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
