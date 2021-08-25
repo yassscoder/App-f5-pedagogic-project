@@ -1,27 +1,25 @@
+/* COLORS */
 $Primary-Color: #000000;
-$Secondary-Color: #FF8000;
+$Secondary-Color: #ff4700;
 $third-Color: #D8D5D5;
-$fourth-Color: #FFFBFB;
+$fourth-Color: #ffffff;
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$Primary-Font: 'Poppins', sans-serif;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $Primary-Font;
 }
 
-.nav-main {
-  width: 100%;
-  background: $Primary-Color;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+html {
+  font-size: 15px;
 
-
-  &__item {
-    display: inline-block;
-  }
 }
+
 
 
 
