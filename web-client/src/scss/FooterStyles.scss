@@ -1,8 +1,3 @@
-/* COLORS */
-$Primary-Color: #000000;
-$Secondary-Color: #ff4700;
-$third-Color: #D8D5D5;
-$fourth-Color: #ffffff;
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -11,8 +6,8 @@ $Primary-Font: 'Poppins', sans-serif;
 .footer-main {
   width: 100%;
   height: 2.5rem;
-  background: $Primary-Color;
-  color: $fourth-Color;
+  background: var(--primary-color);
+  color: var(--fourth-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,7 +19,7 @@ $Primary-Font: 'Poppins', sans-serif;
   &__item {
 
     &--hashtag {
-      background: $Secondary-Color;
+      background: var(--secondary-color);
       width: 22%;
       height: 2.5rem;
       text-align: center;

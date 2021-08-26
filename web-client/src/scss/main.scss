@@ -1,8 +1,15 @@
 /* COLORS */
-$Primary-Color: #000000;
-$Secondary-Color: #ff4700;
-$third-Color: #D8D5D5;
-$fourth-Color: #ffffff;
+$black-color: #000000;
+$orange-color:  #ff4700;
+$light-gray-color: #D8D5D5;
+$white-color: #ffffff;
+
+:root {
+--primary-color: #{$black-color};
+--secondary-color: #{$orange-color};
+--third-color: #{$light-gray-color};
+--fourth-color: #{$white-color};
+}
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');

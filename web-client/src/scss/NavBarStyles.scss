@@ -1,13 +1,8 @@
-/* COLORS */
-$Primary-Color: #000000;
-$Secondary-Color: #ff4700;
-$third-Color: #D8D5D5;
-$fourth-Color: #ffffff;
 
 .nav-main {
   width: 100%;
   height: 3.5rem;
-  background: $Primary-Color;
+  background: var(--primary-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,26 +19,21 @@ $fourth-Color: #ffffff;
 
   &__list {
     display: flex;
-    flex-direction: row;
+    gap: 2rem;
   }
 
   &__link {
     text-decoration: none;
-    color: $fourth-Color;
-    width: 5rem;
+    color: var(--fourth-color);
     padding: 0.3rem 0.7rem;
-    border: $Secondary-Color 2px solid;
+    border: var(--secondary-color) 2px solid;
     border-radius: 1rem;
 
-    &--adm {
-      width: 6rem;
-      margin-right: 2rem;
-    }
   }
 
   &__link:hover {
-    background: $Secondary-Color;
-    color: $Primary-Color;
+    background: var(--secondary-color);
+    color: var(--primary-color);
   }
 
 }
