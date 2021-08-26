@@ -12,12 +12,10 @@ export const App = () => {
                 <NavBar/>
 
                 <Switch>
-                    <Route path="/about">
+
+                    <Route exact path="/">
                     </Route>
-                    <Route path="/users">
-                    </Route>
-                    <Route path="/">
-                    </Route>
+
                 </Switch>
 
                 <Footer/>

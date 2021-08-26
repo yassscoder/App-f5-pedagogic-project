@@ -7,7 +7,7 @@ export const NavBar = () => (
 
         <nav className={"nav-main"}>
             <div className={"nav-main__item"}>
-                <img className={"nav-main__logo"} src={logo}/>
+               <Link to={"/"}><img className={"nav-main__logo"} src={logo}/></Link>
             </div>
             <ul className={"nav-main__list"}>
                 <li className={"nav-main__item"}>
