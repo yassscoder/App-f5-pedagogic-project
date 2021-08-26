@@ -1,0 +1,32 @@
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$Primary-Font: 'Poppins', sans-serif;
+
+.footer-main {
+  width: 100%;
+  height: 2.5rem;
+  background: var(--primary-color);
+  color: var(--fourth-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 2rem;
+  position: fixed;
+  bottom: 0;
+
+  &__item {
+
+    &--hashtag {
+      background: var(--secondary-color);
+      width: 22%;
+      height: 2.5rem;
+      text-align: center;
+      padding: 0.3rem 0;
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+}

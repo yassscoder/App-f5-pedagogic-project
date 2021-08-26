@@ -1,0 +1,39 @@
+
+.nav-main {
+  width: 100%;
+  height: 3.5rem;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 2rem 0.5rem 2rem;
+
+  &__item {
+  }
+
+  &__logo {
+    height: 3.5rem;
+    margin-top: 0.2rem ;
+  }
+
+  &__list {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--fourth-color);
+    padding: 0.3rem 0.7rem;
+    border: var(--secondary-color) 2px solid;
+    border-radius: 1rem;
+
+  }
+
+  &__link:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+  }
+
+}

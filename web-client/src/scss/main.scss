@@ -1,0 +1,35 @@
+/* COLORS */
+$black-color: #000000;
+$orange-color:  #ff4700;
+$light-gray-color: #D8D5D5;
+$white-color: #ffffff;
+
+:root {
+--primary-color: #{$black-color};
+--secondary-color: #{$orange-color};
+--third-color: #{$light-gray-color};
+--fourth-color: #{$white-color};
+}
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$Primary-Font: 'Poppins', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Primary-Font;
+}
+
+html {
+  font-size: 15px;
+
+}
+
+
+
+
+
+
+
