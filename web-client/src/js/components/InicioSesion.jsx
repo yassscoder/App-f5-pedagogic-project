@@ -8,10 +8,14 @@ import candado from "./assets/candado.png";
 export const InicioSesion = () => (
 
     <div className={"inicioSesion-main"}>
-        <img className={"inicioSesion-main__fondo"} src={fondo}/>
+        <div className={"inicioSesion-main__fondo"}>
+        <img  src={fondo}/>
+        </div>
+        {/*
         <div className={"inicioSesion-main__item"}>
             <img className={"inicioSesion-main__logoN"} src={fondoNaranja}/>
         </div>
+
         <div className={"inicioSesion-main__item"}>
             <span>INICIAR SESIÓN</span>
             <section>
@@ -19,11 +23,15 @@ export const InicioSesion = () => (
                 <input/>
             </section>
             <section>
-                <img src={candado}/>
+
+        <img src={candado}/>
                 <input/>
             </section>
             <button></button>
-        </div>
+        </div>  */}
+
+
+
     </div>
 
 )
