@@ -10,13 +10,13 @@ public class Candidate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String lastname;
+    private String lastName;
     private Integer age;
     private String mail;
 
-    public Candidate(Long id, String name, String lastname, Integer age, String mail){
+    public Candidate(Long id, String name, String lastName, Integer age, String mail){
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.age = age;
         this.mail = mail;
     }
@@ -42,12 +42,12 @@ public class Candidate {
         this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Integer getAge(){
