@@ -1,8 +1,7 @@
 .inicioSesion-main__fondo {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: black;
+  width: 100%;
   opacity: 0.5;
+}
+.inicioSesion-main__fondo img {
+  min-width: 100%;
 }

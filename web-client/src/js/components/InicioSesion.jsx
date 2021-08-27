@@ -9,7 +9,7 @@ export const InicioSesion = () => (
 
     <div className={"inicioSesion-main"}>
         <div className={"inicioSesion-main__fondo"}>
-        <img  src={fondo}/>
+            <img src={fondo}/>
         </div>
         {/*
         <div className={"inicioSesion-main__item"}>
