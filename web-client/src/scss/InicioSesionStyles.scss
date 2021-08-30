@@ -1,7 +1,80 @@
-.inicioSesion-main__fondo {
+/*.inicioSesion-main__fondo {
   width: 100%;
   opacity: 0.5;
 }
 .inicioSesion-main__fondo img {
   min-width: 100%;
+}*/
+/**{
+  background-image: url('src/js/components/assets/fondoF5.jpg');
+}*/
+
+
+.container {
+  padding: 0 20px;
 }
+
+.sub-container {
+  max-width: 500px;
+  width: 100%;
+  height: 250px;
+  margin: 150px auto 0;
+  display: flex;
+  background: #f1ecec;
+  border-radius: 9px 9px 9px 9px;
+}
+
+
+.sub-container .banner-img {
+  width: 220px;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.sub-container .banner-img img {
+  /*width: 100%;*/
+  height: 100%;
+  width: 250px;
+  border-radius: 9px 0px 0px 9px;
+}
+
+.sub-container .login-form {
+  width: 280px;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  padding: 40px 35px 0;
+}
+
+.sub-container .login-form .title {
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.sub-container .login-form .input {
+  margin: 15px 15px 10px;
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  border-radius: 5px;
+  border-color: #f3f2f2;
+  color: #f65728;
+}
+
+.sub-container .submit {
+  bottom: 0;
+  left: 0;
+  border-radius: 9px;
+  padding: 2px;
+  background: #d95826;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: initial;
+}
+
