@@ -20,8 +20,11 @@ public class TrainingController {
     public TrainingController (TrainingRepository trainingRepository) {this.trainingRepository = trainingRepository;
     }
 
-    @GetMapping ("/trainings")
-    public List<Training> allTrainings() { return trainingRepository.findAll(); }
+  @GetMapping ("/trainings")
+    public List<Training> allTrainings() {
+        return trainingRepository.findAll();
+    }
+
     @PostMapping("/trainings")
     public ResponseEntity<String> addTraining(@RequestBody Training training){
         trainingRepository.save(training);
