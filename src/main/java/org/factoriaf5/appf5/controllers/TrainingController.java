@@ -30,4 +30,8 @@ public class TrainingController {
         trainingRepository.save(training);
         return new ResponseEntity<>("Created", HttpStatus.OK);
     }
-}
+  @GetMapping ("/trainings")
+    public ResponseEntity<Training> getTrainingById(@RequestBody Training training, Long id){
+        trainingRepository.findById(id);
+         return ResponseEntity.ok().body(training);
+    }}

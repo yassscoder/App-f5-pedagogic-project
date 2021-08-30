@@ -69,7 +69,7 @@ public class CandidatesTest {
 
         assertThat(candidates, contains(allOf(
                 hasProperty("name", is("Olga")),
-               hasProperty("lastName", is("Caparros")),
+                hasProperty("lastName", is("Caparros")),
                 hasProperty("age", is(46)),
                 hasProperty("mail", is("olga@capa.com")))
         ));

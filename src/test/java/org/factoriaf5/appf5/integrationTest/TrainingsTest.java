@@ -59,8 +59,6 @@ public class TrainingsTest {
 
     }
 
-
-
 @Test
 void returnsAvailableTrainings() throws Exception {
     List<Training> trainings = List.of(
@@ -80,5 +78,52 @@ void returnsAvailableTrainings() throws Exception {
             .andExpect(jsonPath("$[1].city", equalTo("Madrid")))
             .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
             .andExpect(jsonPath("$[1].duration", equalTo(300)));
+    }
+@Test
+void getTrainingByIb() throws Exception {
+        List<Training> trainings = List.of(
+            new Training(1L,"Barcelona", "Femtech P1", 850),
+            new Training(2L, "Madrid", "Front P3", 300)
+    );
+    trainingRepository.saveAll(trainings);
 
-}}
+
+    mockMvc.perform(get("/trainings/2"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[1].city", equalTo("Madrid")))
+            .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
+            .andExpect(jsonPath("$[1].duration", equalTo(300)));
+
+
+    }
+
+
+
+
+
+
+/*
+    @Test
+    void editAvailableTraining() throws Exception {
+        List<Training> trainings = List.of(
+                new Training(1L, "Barcelona", "Femtech P1", 850),
+                new Training(2L, "Madrid", "Front P3", 300)
+        );
+    trainingRepository.saveAll(trainings);
+
+    mockMvc.perform(get("/trainings/{2L}"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[1].city", equalTo("Madrid")))
+            .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
+            .andExpect(jsonPath("$[1].duration", equalTo(300)));
+}
+
+
+
+
+
+
+
+
+*/
+}
