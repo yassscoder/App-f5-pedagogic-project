@@ -80,7 +80,7 @@ void returnsAvailableTrainings() throws Exception {
             .andExpect(jsonPath("$[1].duration", equalTo(300)));
     }
 @Test
-void getTrainingByIb() throws Exception {
+void returnsTrainingById() throws Exception {
         List<Training> trainings = List.of(
             new Training(1L,"Barcelona", "Femtech P1", 850),
             new Training(2L, "Madrid", "Front P3", 300)
@@ -90,9 +90,9 @@ void getTrainingByIb() throws Exception {
 
     mockMvc.perform(get("/trainings/2"))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$[1].city", equalTo("Madrid")))
-            .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
-            .andExpect(jsonPath("$[1].duration", equalTo(300)));
+            .andExpect(jsonPath("$.city", equalTo("Madrid")))
+            .andExpect(jsonPath("$.promoName", equalTo("Front P3")))
+            .andExpect(jsonPath("$.duration", equalTo(300)));
 
 
     }

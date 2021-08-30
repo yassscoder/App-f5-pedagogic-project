@@ -5,14 +5,13 @@ import org.factoriaf5.appf5.repositories.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
+//@RequestMapping(value="trainings")
 public class TrainingController {
     private TrainingRepository trainingRepository;
 
@@ -30,8 +29,12 @@ public class TrainingController {
         trainingRepository.save(training);
         return new ResponseEntity<>("Created", HttpStatus.OK);
     }
-  @GetMapping ("/trainings")
-    public ResponseEntity<Training> getTrainingById(@RequestBody Training training, Long id){
-        trainingRepository.findById(id);
-         return ResponseEntity.ok().body(training);
-    }}
+  @GetMapping ("/trainings/{id}")
+    public ResponseEntity<Training> getTrainingById(@PathVariable Long id){
+        Optional<Training> training = trainingRepository.findById(id);
+
+         return ResponseEntity.of(training);
+    }
+    // no hay lista, solo necesitamos path variable porque solo pediremos una parte del "objeto" que y será encontrado por id)
+
+}
