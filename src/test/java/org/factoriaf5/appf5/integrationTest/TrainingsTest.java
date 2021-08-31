@@ -16,8 +16,7 @@ import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -93,37 +92,23 @@ public class TrainingsTest {
                 .andExpect(jsonPath("$.city", equalTo("Barcelona")))
                 .andExpect(jsonPath("$.promoName", equalTo("Femtech P1")))
                 .andExpect(jsonPath("$.duration", equalTo(850)));
+    }
+
+    @Test
+    void deleteTrainingById() throws Exception {
+        Training training = trainingRepository.save(
+                new Training(1L, "Barcelona", "Femtech P1", 850)
+        );
 
 
+        mockMvc.perform(delete("/trainings/" + training.getId())).andExpect(status().is(200));
+
+        var trainings = trainingRepository.findAll();
+
+        assertThat(trainings, hasSize(0));
     }
 
 
 
 
-
-
-/*
-    @Test
-    void editAvailableTraining() throws Exception {
-        List<Training> trainings = List.of(
-                new Training(1L, "Barcelona", "Femtech P1", 850),
-                new Training(2L, "Madrid", "Front P3", 300)
-        );
-    trainingRepository.saveAll(trainings);
-
-    mockMvc.perform(get("/trainings/{2L}"))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$[1].city", equalTo("Madrid")))
-            .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
-            .andExpect(jsonPath("$[1].duration", equalTo(300)));
-}
-
-
-
-
-
-
-
-
-*/
 }

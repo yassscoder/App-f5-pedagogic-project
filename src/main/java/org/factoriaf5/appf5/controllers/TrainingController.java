@@ -37,4 +37,8 @@ public class TrainingController {
     }
     // no hay lista, solo necesitamos path variable porque solo pediremos una parte del "objeto" que y será encontrado por id)
 
+    @DeleteMapping("/trainings/{id}")
+    public void deleteTrainingById(@PathVariable Long id) {
+        trainingRepository.deleteById(id);
+    }
 }
