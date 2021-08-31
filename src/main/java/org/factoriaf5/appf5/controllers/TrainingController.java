@@ -41,4 +41,13 @@ public class TrainingController {
     public void deleteTrainingById(@PathVariable Long id) {
         trainingRepository.deleteById(id);
     }
+
+    @PutMapping("/trainings")
+    public ResponseEntity<Training> editById(@RequestBody Training training){
+        if (trainingRepository.findById(training.getId()).isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        trainingRepository.save(training);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

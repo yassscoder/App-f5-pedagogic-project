@@ -108,7 +108,19 @@ public class TrainingsTest {
         assertThat(trainings, hasSize(0));
     }
 
+    @Test
+    void editAnExistingTraining() throws Exception {
+        Training training = new Training(1L, "Barcelona", "Femtech P1", 850);
+        mockMvc.perform(post("/trainings")
+                .contentType("application/json")
+                .content("{\"id\":\"" + training.getId() + "\", \"city\": \"Barcelona\", \"promoName\": \"FemTech P1\", \"duration\": \"850\"}")
+        ).andExpect(status().is(200));
 
-
-
+        var trainings = trainingRepository.findAll();
+        assertThat(trainings, contains(allOf(
+                hasProperty("city", is("Barcelona")),
+                hasProperty("promoName", is("FemTech P1")),
+                hasProperty("duration", is(850))
+        )));
+    }
 }
