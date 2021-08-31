@@ -36,7 +36,8 @@ public class TrainingsTest {
     private TrainingRepository trainingRepository;
 
     @AfterEach
-    void tearDown() {trainingRepository.deleteAll();
+    void tearDown() {
+        trainingRepository.deleteAll();
     }
 
     @Test
@@ -50,7 +51,7 @@ public class TrainingsTest {
         var trainings = trainingRepository.findAll();
 
         assertThat(trainings, contains(allOf(
-                hasProperty("id", is (1L)),
+                hasProperty("id", is(1L)),
                 hasProperty("city", is("Barcelona")),
                 hasProperty("promoName", is("Femtech P1")),
                 hasProperty("duration", is(850)))
@@ -59,40 +60,39 @@ public class TrainingsTest {
 
     }
 
-@Test
-void returnsAvailableTrainings() throws Exception {
-    List<Training> trainings = List.of(
-            new Training(1L, "Barcelona", "Femtech P1", 850),
-            new Training(2L, "Madrid", "Front P3", 300)
-    );
-
-    trainingRepository.saveAll(trainings);
-
-    mockMvc.perform(get("/trainings"))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$[*]",hasSize(2)))
-            .andExpect(jsonPath("$[0].city", equalTo("Barcelona")))
-            .andExpect(jsonPath("$[0].promoName", equalTo("Femtech P1")))
-            .andExpect(jsonPath("$[0].duration", equalTo(850)))
-
-            .andExpect(jsonPath("$[1].city", equalTo("Madrid")))
-            .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
-            .andExpect(jsonPath("$[1].duration", equalTo(300)));
-    }
-@Test
-void returnsTrainingById() throws Exception {
+    @Test
+    void returnsAvailableTrainings() throws Exception {
         List<Training> trainings = List.of(
-            new Training(1L,"Barcelona", "Femtech P1", 850),
-            new Training(2L, "Madrid", "Front P3", 300)
-    );
-    trainingRepository.saveAll(trainings);
+                new Training(1L, "Barcelona", "Femtech P1", 850),
+                new Training(2L, "Madrid", "Front P3", 300)
+        );
+
+        trainingRepository.saveAll(trainings);
+
+        mockMvc.perform(get("/trainings"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[*]", hasSize(2)))
+                .andExpect(jsonPath("$[0].city", equalTo("Barcelona")))
+                .andExpect(jsonPath("$[0].promoName", equalTo("Femtech P1")))
+                .andExpect(jsonPath("$[0].duration", equalTo(850)))
+
+                .andExpect(jsonPath("$[1].city", equalTo("Madrid")))
+                .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
+                .andExpect(jsonPath("$[1].duration", equalTo(300)));
+    }
+
+    @Test
+    void returnsTrainingById() throws Exception {
+        Training training = trainingRepository.save(
+                new Training(1L, "Barcelona", "Femtech P1", 850)
+        );
 
 
-    mockMvc.perform(get("/trainings/2"))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.city", equalTo("Madrid")))
-            .andExpect(jsonPath("$.promoName", equalTo("Front P3")))
-            .andExpect(jsonPath("$.duration", equalTo(300)));
+        mockMvc.perform(get("/trainings/" + training.getId()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.city", equalTo("Barcelona")))
+                .andExpect(jsonPath("$.promoName", equalTo("Femtech P1")))
+                .andExpect(jsonPath("$.duration", equalTo(850)));
 
 
     }
