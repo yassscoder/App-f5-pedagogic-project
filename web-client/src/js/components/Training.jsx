@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../../scss/Training.scss";
-import fondoNaranja from "./assets/logoNaranjaF5.png";
+
 
 
 export const Training = () => (
