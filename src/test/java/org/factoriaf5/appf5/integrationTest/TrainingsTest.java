@@ -40,26 +40,6 @@ public class TrainingsTest {
     }
 
     @Test
-    void createsNewTrainings() throws Exception {
-        Training training = new Training(1L, "Barcelona", "Femtech P1", 850);
-        mockMvc.perform(post("/trainings")
-                .contentType("application/json")
-                .content(objectMapper.writeValueAsString(training)))
-                .andExpect(status().isOk());
-
-        var trainings = trainingRepository.findAll();
-
-        assertThat(trainings, contains(allOf(
-                hasProperty("id", is(1L)),
-                hasProperty("city", is("Barcelona")),
-                hasProperty("promoName", is("Femtech P1")),
-                hasProperty("duration", is(850)))
-
-        ));
-
-    }
-
-    @Test
     void returnsAvailableTrainings() throws Exception {
         List<Training> trainings = List.of(
                 new Training(1L, "Barcelona", "Femtech P1", 850),
@@ -79,6 +59,28 @@ public class TrainingsTest {
                 .andExpect(jsonPath("$[1].promoName", equalTo("Front P3")))
                 .andExpect(jsonPath("$[1].duration", equalTo(300)));
     }
+
+    @Test
+    void createsNewTrainings() throws Exception {
+        Training training = new Training(1L, "Barcelona", "Femtech P1", 850);
+        mockMvc.perform(post("/trainings")
+                .contentType("application/json")
+                .content(objectMapper.writeValueAsString(training)))
+                .andExpect(status().isOk());
+
+        var trainings = trainingRepository.findAll();
+
+        assertThat(trainings, contains(allOf(
+                hasProperty("id", is(1L)),
+                hasProperty("city", is("Barcelona")),
+                hasProperty("promoName", is("Femtech P1")),
+                hasProperty("duration", is(850)))
+
+        ));
+
+    }
+
+
 
     @Test
     void returnsTrainingById() throws Exception {
@@ -110,16 +112,17 @@ public class TrainingsTest {
 
     @Test
     void editAnExistingTraining() throws Exception {
-        Training training = new Training(1L, "Barcelona", "Femtech P1", 850);
-        mockMvc.perform(post("/trainings")
+        Training training = trainingRepository.save(
+                new Training(1L, "Barcelona", "Femtech P1", 850));
+        mockMvc.perform(put("/trainings")
                 .contentType("application/json")
-                .content("{\"id\":\"" + training.getId() + "\", \"city\": \"Barcelona\", \"promoName\": \"FemTech P1\", \"duration\": \"850\"}")
+                .content("{\"id\":\"" + training.getId() + "\", \"city\": \"Gijón\", \"promoName\": \"Full stack\", \"duration\": \"850\"}")
         ).andExpect(status().is(200));
 
-        var trainings = trainingRepository.findAll();
-        assertThat(trainings, contains(allOf(
-                hasProperty("city", is("Barcelona")),
-                hasProperty("promoName", is("FemTech P1")),
+        var editedTraining = trainingRepository.findAll();
+        assertThat(editedTraining, contains(allOf(
+                hasProperty("city", is("Gijón")),
+                hasProperty("promoName", is("Full stack")),
                 hasProperty("duration", is(850))
         )));
     }

@@ -13,7 +13,7 @@ public class Training {
     private Integer duration;
 
     public Training (Long id, String city, String promoName, Integer duration) {
-
+        //this.id = id;
         this.city = city;
         this.promoName = promoName;
         this.duration = duration;
