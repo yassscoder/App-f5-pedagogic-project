@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {NavBar} from "./NavBar";
 import {Footer} from "./Footer";
+import {InicioSesion} from "./InicioSesion";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "../../scss/main.scss";
 
@@ -9,16 +10,20 @@ export const App = () => {
 
     return (
         <Router>
-                <NavBar/>
+            <NavBar/>
 
-                <Switch>
+            <Switch>
 
-                    <Route exact path="/">
-                    </Route>
+                <Route exact path="/">
+                </Route>
 
-                </Switch>
+                <Route  path="/InicioSesion">
+                    <InicioSesion/>
+                </Route>
 
-                <Footer/>
+            </Switch>
+
+            <Footer/>
         </Router>
     );
 }
