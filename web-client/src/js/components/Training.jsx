@@ -1,23 +1,18 @@
 import * as React from "react";
 import "../../scss/Training.scss";
-
+import {Link} from "react-router-dom";
 
 
 export const Training = () => (
 
-    <div className="card">
-        <div className="card-top">
-            <h2>Barcelona</h2>
+    <div className="card__header">
+        <div className="card__title">
+            <Link to={"/"} className={"card__title-main"} id="cities">Barcelona</Link>
         </div>
-        {/*<div className="card-content">
-            <div className="subtext"></div>
-        </div>*/}
 
-        <div className="card-down">
-            <div className="subtext-down">
-                <h1>Full Stack</h1>
-                <h2>850 h</h2>
-            </div>
+        <div className="card__subtitle">
+            <h1 id="courses">FULL STACK</h1>
+            <h2 id="durations">850 H</h2>
         </div>
     </div>
 )
