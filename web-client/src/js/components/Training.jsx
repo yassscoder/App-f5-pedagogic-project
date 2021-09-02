@@ -4,49 +4,77 @@ import {Link} from "react-router-dom";
 
 
 export const Training = () => (
-    <div className={"container-cards"}>
-        <div className="card__header">
-            <div className="card__title">
-                <Link to={"/"} className={"card__title-main"} id="cities">Barcelona</Link>
-            </div>
-
-            <div className="card__subtitle">
-                <h1 id="courses">FULL STACK</h1>
-                <h2 id="durations">850 H</h2>
-            </div>
+    <div className={"container__cards"}>
+        <div className={"card__header"} id={"cards"}>
+            <a className={"cards__link"} href={"#"}>
+                <div className={"card__title"}>
+                    <h1 id={"cities"}>BARCELONA</h1>
+                </div>
+                <div className={"card__subtitle"}>
+                    <div className={"card__subtitle__text"}>
+                        <h1 id={"courses"}>FULL STACK</h1>
+                        <h2 id={"durations"}>850 H</h2>
+                    </div>
+                </div>
+            </a>
         </div>
 
-        <div className="card__header">
-            <div className="card__title">
-                <Link to={"/"} className={"card__title-main"} id="cities">Barcelona</Link>
-            </div>
-
-            <div className="card__subtitle">
-                <h1 id="courses">FULL STACK</h1>
-                <h2 id="durations">850 H</h2>
-            </div>
-        </div>
-        <div className="card__header">
-            <div className="card__title">
-                <Link to={"/"} className={"card__title-main"} id="cities">Barcelona</Link>
-            </div>
-
-            <div className="card__subtitle">
-                <h1 id="courses">FULL STACK</h1>
-                <h2 id="durations">850 H</h2>
-            </div>
+        <div className={"card__header"} id={"cards"}>
+            <a className={"cards__link"} href={"#"}>
+                <div className={"card__title"}>
+                    <h1 id={"cities"}>BARCELONA</h1>
+                </div>
+                <div className={"card__subtitle"}>
+                    <div className={"card__subtitle__text"}>
+                        <h1 id={"courses"}>FULL STACK</h1>
+                        <h2 id={"durations"}>850 H</h2>
+                    </div>
+                </div>
+            </a>
         </div>
 
-        <div className="card__header">
-            <div className="card__title">
-                <Link to={"/"} className={"card__title-main"} id="cities">Barcelona</Link>
-            </div>
-
-            <div className="card__subtitle">
-                <h1 id="courses">FULL STACK</h1>
-                <h2 id="durations">850 H</h2>
-            </div>
+        <div className={"card__header"} id={"cards"}>
+            <a className={"cards__link"} href={"#"}>
+                <div className={"card__title"}>
+                    <h1 id={"cities"}>BARCELONA</h1>
+                </div>
+                <div className={"card__subtitle"}>
+                    <div className={"card__subtitle__text"}>
+                        <h1 id={"courses"}>FULL STACK</h1>
+                        <h2 id={"durations"}>850 H</h2>
+                    </div>
+                </div>
+            </a>
         </div>
+
+        <div className={"card__header"} id={"cards"}>
+            <a className={"cards__link"} href={"#"}>
+                <div className={"card__title"}>
+                    <h1 id={"cities"}>BARCELONA</h1>
+                </div>
+                <div className={"card__subtitle"}>
+                    <div className={"card__subtitle__text"}>
+                        <h1 id={"courses"}>FULL STACK</h1>
+                        <h2 id={"durations"}>850 H</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div className={"card__header"} id={"cards"}>
+            <a className={"cards__link"} href={"#"}>
+                <div className={"card__title"}>
+                    <h1 id={"cities"}>BARCELONA</h1>
+                </div>
+                <div className={"card__subtitle"}>
+                    <div className={"card__subtitle__text"}>
+                        <h1 id={"courses"}>FULL STACK</h1>
+                        <h2 id={"durations"}>850 H</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+
     </div>
 )
 

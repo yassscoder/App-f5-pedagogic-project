@@ -3,14 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+$Primary-Font: 'Poppins', sans-serif;
+
+
 body {
   background-color: var(--third-color);
 }
-.container-cards {
-    display: flex;
-    gap: 2rem;
-    flex-flow: wrap;
+
+.container__cards {
+  display: flex;
+  gap: 2rem;
+  flex-flow: wrap;
 }
+.cards__link {
+  display: flex;
+  gap: 2rem;
+  flex-flow: wrap;
+  text-decoration: none;
+}
+
 .card__header {
   background-color: var(--secondary-color);
   display: flex;
@@ -18,38 +30,47 @@ body {
   flex-direction: column;
   width: 500px;
   height: 250px;
-  font-family: PT Sans, sans-serif;
   border-radius: 2rem;
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
   margin: auto;
   margin-top: 20px;
+  letter-spacing: 0.2rem;
 }
 
-  .card__title {
-    font-size: 3rem;
-  }
+.card__title {
+  font-size: 3rem;
+}
 
-  .card__title-main {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-decoration:none;
-    color: var(--primary-color);
-  }
+.card__title h1 {
+  height: 36px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--primary-color);
+}
 
 .card__subtitle {
-  padding: 5px;
+  padding: 20px;
   background: var(--fourth-color);
-  height: 500px;
+  height: 185px;
   width: 500px;
   border-radius: 0 0 2rem 2rem;
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
 
 }
-  .card__subtitle h1, h2 {
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 3rem;
-    font-family: PT Sans, sans-serif;
-  }
+
+.card__subtitle__text {
+padding: 30px;
+}
+
+.card__subtitle h1, h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.7rem;
+  font-weight: 100;
+  text-decoration: none;
+  color: var(--primary-color);
+}
 
