@@ -15,6 +15,7 @@ public class Candidate {
     private String mail;
 
     public Candidate(Long id, String name, String lastName, Integer age, String mail){
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
