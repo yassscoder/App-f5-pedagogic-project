@@ -7,7 +7,7 @@ export const Training = () => (
 
     <div className={"container__cards"}>
         <div className={"card__header"} id={"cards"}>
-            <a className={"cards__link"} href={"#"}>
+            <a className={"cards__link"} href={"/candidates"}>
                 <div className={"card__title"}>
                     <h1 id={"cities"}>BARCELONA</h1>
                 </div>
