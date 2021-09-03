@@ -8,43 +8,43 @@ export const Candidates = () => (
     <div className={"container"}>
         <div className={"table"}>
             <div className={"table__border"}>
-                <div className={"border__item"} id={"name"}>NOMBRE</div>
-                <div className={"border__item"} id={"lastName"}>APELLIDO</div>
-                <div className={"border__item"} id={"sity"}>CIUDAD</div>
-                <div className={"border__item"} id={"phone"}>TELEFONO</div>
-                <div className={"border__item"} id={"mail"}>EMAIL</div>
+                <div className={"table__info table__info--bold"} >NOMBRE</div>
+                <div className={"table__info table__info--bold"} >APELLIDO</div>
+                <div className={"table__info  table__info--bold"} >CIUDAD</div>
+                <div className={"table__info table__info--bold"} >TELEFONO</div>
+                <div className={"table__info table__info--bold"} >EMAIL</div>
             </div>
             <div className={"table__content"}>
                 <div className={"table__row"}>
-                    <div className={"table__info"} id={"name"}>Holy</div>
-                    <div className={"table__info"} id={"lastName"}>Holy</div>
-                    <div className={"table__info"} id={"sity"}>Holy</div>
-                    <div className={"table__info"} id={"phone"}>1231123</div>
-                    <div className={"table__info"} id={"mail"}>5123</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >1231123</div>
+                    <div className={"table__info"} >5123</div>
                 </div>
 
                 <div className={"table__row"}>
-                    <div className={"table__info"} id={"name"}>Holy</div>
-                    <div className={"table__info"} id={"lastName"}>Holy</div>
-                    <div className={"table__info"} id={"sity"}>Holy</div>
-                    <div className={"table__info"} id={"phone"}>1231123</div>
-                    <div className={"table__info"} id={"mail"}>5123</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >1231123</div>
+                    <div className={"table__info"} >5123</div>
                 </div>
 
                 <div className={"table__row"}>
-                    <div className={"table__info"} id={"name"}>Holy</div>
-                    <div className={"table__info"} id={"lastName"}>Holy</div>
-                    <div className={"table__info"} id={"sity"}>Holy</div>
-                    <div className={"table__info"} id={"phone"}>1231123</div>
-                    <div className={"table__info"} id={"mail"}>5123</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >1231123</div>
+                    <div className={"table__info"} >5123</div>
                 </div>
 
                 <div className={"table__row"}>
-                    <div className={"table__info"} id={"name"}>Holy</div>
-                    <div className={"table__info"} id={"lastName"}>Holy</div>
-                    <div className={"table__info"} id={"sity"}>Holy</div>
-                    <div className={"table__info"} id={"phone"}>1231123</div>
-                    <div className={"table__info"} id={"mail"}>5123</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >Holy</div>
+                    <div className={"table__info"} >1231123</div>
+                    <div className={"table__info"} >5123</div>
                 </div>
 
             </div>

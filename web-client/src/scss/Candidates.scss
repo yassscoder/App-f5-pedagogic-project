@@ -14,42 +14,42 @@ body {
 
 .container {
   max-width: 80rem;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  min-height: 10rem;
+  margin: 3rem auto;
 }
 
 .table {
   width: 100%;
+  &__border {
+    display: flex;
+    width: 100%;
+    background: var(--secondary-color);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+  }
+  &__info{
+    flex: 1 1 20%;
+    text-align: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    &--bold{
+      font-weight: bolder;
+    }
+  }
+  &__content {
+    background-color: var(--fourth-color);
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+  &__row {
+    display: flex;
+    /*color: var(--primary-color);*/
+  }
 }
 
-.table__border {
-  display: flex;
-  width: 100%;
-  background: var(--secondary-color);
-  border-radius: 0.30rem;
-}
 
-.table__content {
-  background-color: var(--fourth-color);
-  border-radius: 0.30rem;
-}
 
-.table__row {
-  display: flex;
-  width: 100%;
-  /*color: var(--primary-color);*/
-}
 
-.table__info, .border__item {
-  flex: 1 1 20%;
-  text-align: center;
-  color: var(--primary-color);;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-}
+
+
 
 
