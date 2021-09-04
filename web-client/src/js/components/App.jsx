@@ -15,10 +15,17 @@ export const App = () => {
             <Switch>
 
                 <Route exact path="/">
+                    <InicioSesion/>
                 </Route>
 
-                <Route  path="/InicioSesion">
-                    <InicioSesion/>
+                <Route path="/trainings">
+                    {/*<Training/>*/}
+
+                </Route>
+                <Route path="/candidates">
+                    {/*<Candidates/>*/}
+
+
                 </Route>
 
             </Switch>
