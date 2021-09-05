@@ -13,6 +13,7 @@ $white-color: #ffffff;
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 $Primary-Font: 'Poppins', sans-serif;
 
 * {
@@ -24,8 +25,15 @@ $Primary-Font: 'Poppins', sans-serif;
 
 html {
   font-size: 15px;
-
+  a:link{
+    text-decoration: none;
+  }
+  a{
+    color: inherit;
+    display: contents;
+  }
 }
+
 
 
 
