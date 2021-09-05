@@ -1,77 +1,51 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-$Primary-Font: 'Poppins', sans-serif;
-
-
 body {
   background-color: var(--third-color);
 }
-
 .container__cards {
   display: flex;
-  gap: 2rem;
   flex-flow: wrap;
-}
-.cards__link {
-  display: flex;
-  gap: 2rem;
-  flex-flow: wrap;
-  text-decoration: none;
+  justify-content: space-around;
+  row-gap: 2.5rem;
+  column-gap: 1rem;
+  margin: 2.5rem 3rem 5rem 3rem;
 }
 
-.card__header {
-  background-color: var(--secondary-color);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 500px;
-  height: 250px;
-  border-radius: 2rem;
+.card{
+  width:30rem;
+  border-radius:1rem;
+  overflow:hidden;
+  text-align:center;
   box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
-  margin: auto;
-  margin-top: 20px;
-  letter-spacing: 0.2rem;
-}
-
-.card__title {
-  font-size: 3rem;
-  margin: auto;
-}
-
-.card__title h1 {
-  height: 36px;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-.card__subtitle {
-  padding: 20px;
-  background: var(--fourth-color);
-  height: 185px;
-  width: 500px;
-  border-radius: 0 0 2rem 2rem;
-  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+  &__title{
+    background-color: var(--secondary-color);
+    padding:0.4rem;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+  }
+  &__city{
+    font-weight: bold;
+  }
+  &__body{
+    background-color: var(--fourth-color);
+    padding: 1rem;
+    display:grid;
+    gap: 1rem;
+    letter-spacing: 0.7rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  &__info{
+    font-weight: 500;
+  }
 
 }
 
-.card__subtitle__text {
-padding: 30px;
+
+  //MEDIA QUERIES
+@media (max-width: 480px) {
+  html {
+    font-size:12px;
+  }
 }
 
-.card__subtitle h1, h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  letter-spacing: 0.7rem;
-  font-weight: 100;
-  text-decoration: none;
-  color: var(--primary-color);
-}
 
