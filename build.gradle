@@ -26,9 +26,9 @@ test {
     useJUnitPlatform()
 }
 
-jar {
-    enabled = false
-}
+//jar {
+//    enabled = false
+//}
 
 task installFrontendDependencies(type: NpmTask) {
     workingDir = file('./web-client')
@@ -46,8 +46,8 @@ task copyFiles(type: Copy) {
     from('./web-client/build')
     include("*.html")
     include("*.js")
-    include("*.jpg")
-    include("*.png")
+//    include("*.jpg")
+//    include("*.png")
     into("./src/main/resources/static")
 }
 
