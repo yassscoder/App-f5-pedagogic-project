@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../../scss/Training.scss";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import {TrainingCard} from "./TrainingCard";
 
 export const TrainingList = (props) => (

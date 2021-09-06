@@ -38,6 +38,7 @@ export const App = () => {
                 </Route>
 
                     <Route path="/training-list">
+
                         <TrainingList trainings={trainings}/>
 
                     </Route>
