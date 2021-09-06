@@ -30,6 +30,7 @@ body {
     text-align: center;
     color: var(--primary-color);
     text-decoration: none;
+    border: 0.1rem solid var(--third-color);
     &--bold{
       font-weight: bolder;
     }
