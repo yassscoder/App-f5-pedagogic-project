@@ -8,7 +8,7 @@ export const TrainingForm = (props) => {
     const [redirect, setRedirect] = useState (false);
 
     if (redirect){
-        return <Redirect to="/training-added"/>;
+        return <Redirect to="/training-list"/>;
 
     }
 
@@ -32,7 +32,7 @@ export const TrainingForm = (props) => {
                     <Field id="city" name="city"/>
                     <label htmlFor="promoName">Nombre promo</label>
                     <Field id="promoName" name="promoName"/>
-                    <label htmlFor="duration">Duration(h)</label>
+                    <label htmlFor="duration">Duración(h)</label>
                     <Field id="duration" name="duration"/>
                     <button type={"submit"}>Guardar promoción</button>
 
