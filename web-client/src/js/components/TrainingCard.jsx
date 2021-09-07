@@ -8,6 +8,6 @@ export const TrainingCard = (props) =>
         </div>
         <div className={"card__body"}>
             <h3 className={"card__info"}>{props.training.promoName}</h3>
-            <h3 className={"card__info"}>{props.training.duration} h</h3>
+            <h3 className={"card__info"}>{props.training.duration}h</h3>
         </div>
     </div>

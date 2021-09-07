@@ -4,12 +4,12 @@ export class TrainingApi {
             .then(response => response.json())
     }
 
-    saveTraining(newTraining) {
+    saveTraining(Training) {
         return fetch("/trainings",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: newTraining
+                body: Training
             }
         )
     }
