@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../../scss/Candidates.scss";
-import {Link} from "react-router-dom";
+
 
 
 export const Candidates = () => (

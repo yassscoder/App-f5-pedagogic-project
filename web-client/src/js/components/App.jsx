@@ -8,6 +8,8 @@ import "../../scss/main.scss";
 import {TrainingList} from "./TrainingList";
 import {TrainingForm} from "./TrainingForm";
 import {TrainingApi} from "../API/TrainingApi";
+import {Candidates} from "./Candidates";
+import {CandidateForm} from "./CandidateForm";
 
 
 export const App = () => {
@@ -46,6 +48,12 @@ export const App = () => {
                         <TrainingForm onSubmit={saveTraining}/>
                     </Route>
 
+                    <Route  path="/Candidate-list">
+                     <Candidates/>
+                    </Route>
+                    <Route  path="/Candidate-form">
+                        <CandidateForm/>
+                    </Route>
             </Switch>
 
             <Footer/>
