@@ -9,13 +9,13 @@ export const NavBar = () => (
             <div className={"nav-main__item"}>
                <Link to={"/"}><img className={"nav-main__logo"} src={logo}/></Link>
             </div>
-            {/*<ul className={"nav-main__list"}>
+            <ul className={"nav-main__list"}>
                 <li className={"nav-main__item"}>
-                    <Link to={"/Administradores"} className={"nav-main__link nav-main__link--adm"} >Administradores</Link>
+                    <Link to={"/training-form"} className={"nav-main__link nav-main__link--adm"} >Training Form</Link>
                 </li>
                 <li className={"nav-main__item"}>
-                    <Link to={"/CerrarSesion"} className={"nav-main__link nav-main__link--cs"}>Cerrar Sesión</Link>
+                    <Link to={"/training-list"} className={"nav-main__link nav-main__link--cs"}>Training List</Link>
                 </li>
-            </ul>*/}
+            </ul>
         </nav>
 )
