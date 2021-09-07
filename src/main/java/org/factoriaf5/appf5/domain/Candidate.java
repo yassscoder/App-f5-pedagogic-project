@@ -22,9 +22,7 @@ public class Candidate {
         this.mail = mail;
     }
 
-    public Candidate(){
-
-    }
+    public Candidate(){}
 
 
     public Long getId() {
