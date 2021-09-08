@@ -1,14 +1,13 @@
 import * as React from "react";
 import {useState} from "react";
-import {Redirect} from "react-router";
+import {Redirect} from "react-router-dom";
 import {Formik, Field, Form} from "formik";
-// import * as yup from 'yup'; ***NPM INSTALL YUP DE NUEVO***
 
 export const CandidateForm = (props) => {
     const [redirect, setRedirect] = useState (false);
 
     if (redirect){
-        return <Redirect to="/Candidates-added"/>;
+        return <Redirect to="/candidate-list"/>;
 
     }
 

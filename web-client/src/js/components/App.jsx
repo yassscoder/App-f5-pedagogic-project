@@ -18,6 +18,10 @@ export const App = () => {
     const [trainings, setTrainings] = useState([])
     const [updateTraining, setUpdate] = useState(true)
 
+    const candidateApi = new CandidateApi()
+    const [candidates, setCandidates] = useState([])
+    const [updateCandidate, setUpdateCandidate] = useState(true)
+
     useEffect(() => {
         if (updateTraining){
             trainingApi.getTrainings()
@@ -26,9 +30,21 @@ export const App = () => {
         }
     }, [updateTraining])
 
+    useEffect(() => {
+        if (updateCandidate){
+            candidateApi.getCandidates()
+                .then(setCandidates)
+                .then(_=> setUpdateCandidate(false))
+        }
+    }, [updateCandidate])
+
     const saveTraining = training =>
         trainingApi.saveTraining(training)
             .then(_=> setUpdate(true))
+
+    const saveCandidate = candidate =>
+        candidateApi.saveCandidate(candidate)
+            .then(_=> setUpdateCandidate(true))
 
     return <Router>
             <NavBar/>
@@ -52,7 +68,7 @@ export const App = () => {
                      <Candidates/>
                     </Route>
                     <Route  path="/Candidate-form">
-                        <CandidateForm/>
+                        <CandidateForm onSubmit={saveCandidate}/>
                     </Route>
             </Switch>
 
