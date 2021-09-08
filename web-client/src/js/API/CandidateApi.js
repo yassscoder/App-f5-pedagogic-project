@@ -5,7 +5,6 @@ export class CandidateApi {
     }
 
 
-
     saveCandidate(Candidate) {
         return fetch("/candidates",
             {

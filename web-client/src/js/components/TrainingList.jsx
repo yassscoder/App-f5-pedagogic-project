@@ -13,8 +13,6 @@ export const TrainingList = (props) => (
             )}
         {/*</Link>*/}
 
-
-
     </section>
 );
 
