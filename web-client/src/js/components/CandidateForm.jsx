@@ -17,7 +17,7 @@ export const CandidateForm = (props) => {
                     name: '',
                     lastName: '',
                     age: '',
-                    email: ''
+                    mail: ''
 
                 }}
                 onSubmit={
@@ -31,12 +31,10 @@ export const CandidateForm = (props) => {
                     <Field id="name" name="name"/>
                     <label htmlFor="lastName">Apellido</label>
                     <Field id="lastName" name="lastName"/>
-                    <label htmlFor="age">Age</label>
+                    <label htmlFor="age">Edad</label>
                     <Field id="age" name="age"/>
-                    <label htmlFor="phone">Telefono</label>
-                    <Field id="phone" name="phone"/>
-                    <label htmlFor="email">Correo electronico</label>
-                    <Field id="email" name="email"/>
+                    <label htmlFor="mail">Correo electronico</label>
+                    <Field id="mail" name="mail"/>
                     <button type={"submit"}>Guardar datos</button>
 
                 </Form>}

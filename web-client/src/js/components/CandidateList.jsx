@@ -1,15 +1,21 @@
 import * as React from "react";
 import "../../scss/Candidates.scss";
-// import {Link} from "react-router-dom";
+
 import {CandidatesTable} from "./CandidatesTable";
 
 export const CandidateList = (props) => (
-
-    <section className={"table"}>
-
+    <div className={"container"}>
+    <div className={"table"}>
+        <div className={"table__border"}>
+            <div className={"table__info table__info--bold"} >NOMBRE</div>
+            <div className={"table__info table__info--bold"} >APELLIDO</div>
+            <div className={"table__info  table__info--bold"} >EDAD</div>
+            <div className={"table__info table__info--bold"} >EMAIL</div>
+        </div>
         {props.candidates.map(candidate =>
             <CandidatesTable candidate={candidate}/>
         )}
 
-    </section>
+    </div>
+    </div>
 );
