@@ -11,6 +11,7 @@ import javax.persistence.*;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String name;
+        private String fcc_id;
 
         public Long getId() {
             return id;
@@ -28,11 +29,18 @@ import javax.persistence.*;
             this.name = name;
         }
 
-    public Lesson (Long id, String name) {
+        public String getFcc_id() { return fcc_id; }
+
+        public void setFcc_id(String fcc_id) { this.fcc_id = fcc_id; }
+
+    public Lesson (Long id, String name, String fcc_id) {
         this.id = id;
         this.name = name;
+        this.fcc_id = fcc_id;
 
     }
     public Lesson (){
         }
+
+
     }

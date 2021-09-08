@@ -38,8 +38,8 @@ public class DataLoader {
                 new Training(2L, "Madrid", "Front P3", 300)
         );
         List<Lesson> lessons = List.of(
-                new Lesson(1L,"Ejercicio1"),
-                new Lesson(2L, "Ejercicio2")
+                new Lesson(1L,"Ejercicio1", "1234567890"),
+                new Lesson(2L, "Ejercicio2", "0987654321")
         );
 
         candidateRepository.saveAll(candidates);
