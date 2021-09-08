@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import "../../scss/Candidates.scss";
 export const CandidatesTable = (props) =>
 
     <div className={"container"}>
