@@ -7,7 +7,7 @@ export const CandidateList = (props) => (
 
     <section className={"table"}>
 
-        {props.candidates.map( candidate =>
+        {props.candidates.map(candidate =>
             <CandidatesTable candidate={candidate}/>
         )}
 

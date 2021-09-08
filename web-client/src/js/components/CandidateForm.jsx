@@ -16,8 +16,7 @@ export const CandidateForm = (props) => {
                 initialValues={{
                     name: '',
                     lastName: '',
-                    city: '',
-                    phone: '',
+                    age: '',
                     email: ''
 
                 }}
@@ -32,8 +31,8 @@ export const CandidateForm = (props) => {
                     <Field id="name" name="name"/>
                     <label htmlFor="lastName">Apellido</label>
                     <Field id="lastName" name="lastName"/>
-                    <label htmlFor="city">Ciudad</label>
-                    <Field id="city" name="city"/>
+                    <label htmlFor="age">Age</label>
+                    <Field id="age" name="age"/>
                     <label htmlFor="phone">Telefono</label>
                     <Field id="phone" name="phone"/>
                     <label htmlFor="email">Correo electronico</label>
