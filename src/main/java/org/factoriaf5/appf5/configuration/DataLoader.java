@@ -1,5 +1,7 @@
 package org.factoriaf5.appf5.configuration;
 
+import org.factoriaf5.appf5.CursosFCC.Lesson;
+import org.factoriaf5.appf5.CursosFCC.LessonRepository;
 import org.factoriaf5.appf5.domain.Candidate;
 import org.factoriaf5.appf5.domain.Training;
 import org.factoriaf5.appf5.repositories.CandidateRepository;
@@ -16,11 +18,12 @@ import java.util.List;
 public class DataLoader {
     private CandidateRepository candidateRepository;
     private TrainingRepository trainingRepository;
-
+    private LessonRepository lessonRepository;
     @Autowired
-    public DataLoader(CandidateRepository candidateRepository, TrainingRepository trainingRepository) {
+    public DataLoader(CandidateRepository candidateRepository, TrainingRepository trainingRepository, LessonRepository lessonRepository) {
         this.candidateRepository = candidateRepository;
         this.trainingRepository = trainingRepository;
+        this.lessonRepository = lessonRepository;
     }
 
     @PostConstruct
@@ -34,13 +37,17 @@ public class DataLoader {
                 new Training(1L, "Barcelona", "Femtech P1", 850),
                 new Training(2L, "Madrid", "Front P3", 300)
         );
+        List<Lesson> lessons = List.of(
+                new Lesson(1L,"Ejercicio1"),
+                new Lesson(2L, "Ejercicio2")
+        );
 
         candidateRepository.saveAll(candidates);
         trainingRepository.saveAll(trainings);
+        lessonRepository.saveAll(lessons);
     }
 
 
 }
-
 
 
