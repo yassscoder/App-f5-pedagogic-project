@@ -16,6 +16,12 @@ export const NavBar = () => (
                 <li className={"nav-main__item"}>
                     <Link to={"/training-list"} className={"nav-main__link nav-main__link--cs"}>Training List</Link>
                 </li>
+                <li className={"nav-main__item"}>
+                    <Link to={"/candidate-form"} className={"nav-main__link nav-main__link--cf"}>Candidate Form</Link>
+                </li>
+                <li className={"nav-main__item"}>
+                    <Link to={"/candidate-list"} className={"nav-main__link nav-main__link--cl"}>Candidate List</Link>
+                </li>
             </ul>
         </nav>
 )
