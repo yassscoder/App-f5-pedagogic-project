@@ -11,7 +11,7 @@ import {TrainingApi} from "../API/TrainingApi";
 import {CandidateForm} from "./CandidateForm";
 import {CandidateApi} from "../API/CandidateApi";
 import {CandidateList} from "./CandidateList";
-
+import {Administrator} from "./Administrator";
 
 export const App = () => {
 
@@ -55,6 +55,15 @@ export const App = () => {
                 <Route exact path="/">
                     <InicioSesion/>
                 </Route>
+
+
+
+                <Route path="/administrator">
+                    <Administrator/>
+                </Route>
+
+
+
                     <Route path="/training-list">
                         <TrainingList trainings={trainings}/>
                     </Route>
@@ -68,6 +77,7 @@ export const App = () => {
                     <Route  path="/Candidate-form">
                         <CandidateForm onSubmit={saveCandidate}/>
                     </Route>
+
             </Switch>
 
             <Footer/>
