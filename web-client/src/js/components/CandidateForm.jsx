@@ -17,7 +17,8 @@ export const CandidateForm = (props) => {
                     name: '',
                     lastName: '',
                     age: '',
-                    mail: ''
+                    mail: '',
+                    userFree: ''
 
                 }}
                 onSubmit={
@@ -35,6 +36,8 @@ export const CandidateForm = (props) => {
                     <Field id="age" name="age"/>
                     <label htmlFor="mail">Correo electronico</label>
                     <Field id="mail" name="mail"/>
+                    <label htmlFor="userFree">Usuario FreeCodeCamp</label>
+                    <Field id="userFree" name="userFree"/>
                     <button type={"submit"}>Guardar datos</button>
 
                 </Form>}

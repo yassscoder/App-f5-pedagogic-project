@@ -13,13 +13,15 @@ public class Candidate {
     private String lastName;
     private Integer age;
     private String mail;
+    private String userFree;
 
-    public Candidate(Long id, String name, String lastName, Integer age, String mail){
+    public Candidate(Long id, String name, String lastName, Integer age, String mail, String userFree){
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
         this.mail = mail;
+        this.userFree = userFree;
     }
 
     public Candidate(){
@@ -65,5 +67,13 @@ public class Candidate {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getUserFree() {
+        return userFree;
+    }
+
+    public void setUserFree(String userFree) {
+        this.userFree = userFree;
     }
 }

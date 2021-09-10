@@ -11,6 +11,7 @@ export const CandidateList = (props) => (
             <div className={"table__info table__info--bold"} >APELLIDO</div>
             <div className={"table__info  table__info--bold"} >EDAD</div>
             <div className={"table__info table__info--bold"} >EMAIL</div>
+            <div className={"table__info table__info--bold"} >USUARIO FREECODECAMP</div>
         </div>
         {props.candidates.map(candidate =>
             <CandidatesTable candidate={candidate}/>

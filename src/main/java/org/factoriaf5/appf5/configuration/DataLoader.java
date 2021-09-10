@@ -26,8 +26,8 @@ public class DataLoader {
     @PostConstruct
     void cargarDatosDePrueba() {
         List<Candidate> candidates = List.of(
-                new Candidate(1L, "Olga", "Caparros", 46, "olga@capa.com"),
-                new Candidate(2L, "Alisa", "Maravillosa", 35, "alisa@malla.com")
+                new Candidate(1L, "Olga", "Caparros", 46, "olga@capa.com", "user05"),
+                new Candidate(2L, "Alisa", "Maravillosa", 35, "alisa@malla.com", "user10")
         );
 
         List<Training> trainings = List.of(

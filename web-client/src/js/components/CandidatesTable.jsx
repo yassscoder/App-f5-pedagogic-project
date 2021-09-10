@@ -10,6 +10,7 @@ export const CandidatesTable = (props) =>
                 <div className={"table__info"} >{ props.candidate.lastName}</div>
                 <div className={"table__info"} >{ props.candidate.age}</div>
                 <div className={"table__info"} >{ props.candidate.mail}</div>
+                <div className={"table__info"} >{ props.candidate.userFree}</div>
             </div>
         </div>
     </div>
