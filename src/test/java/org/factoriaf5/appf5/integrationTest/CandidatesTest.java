@@ -37,8 +37,8 @@ public class CandidatesTest {
     @Test
     void returnsTheAvailableCandidates() throws Exception {
         List<Candidate> candidates = List.of(
-                new Candidate(1L, "Olga", "Caparros", 46, "olga@capa.com", "user05"),
-                new Candidate(2L, "Alisa", "Maravillosa", 35, "alisa@malla.com", "user10")
+                new Candidate(1L, "Olga", "Caparros", 46, "olga@capa.com", "user05", "3"),
+                new Candidate(2L, "Alisa", "Maravillosa", 35, "alisa@malla.com", "user10", "13")
         );
 
         candidateRepository.saveAll(candidates);
@@ -51,12 +51,14 @@ public class CandidatesTest {
                 .andExpect(jsonPath("$[0].age", equalTo(46)))
                 .andExpect(jsonPath("$[0].mail", equalTo("olga@capa.com")))
                 .andExpect(jsonPath("$[0].userFree", equalTo("user05")))
+                .andExpect(jsonPath("$[0].numCompleted", equalTo("3")))
 
                 .andExpect(jsonPath("$[1].name", equalTo("Alisa")))
                 .andExpect(jsonPath("$[1].lastName", equalTo("Maravillosa")))
                 .andExpect(jsonPath("$[1].age", equalTo(35)))
                 .andExpect(jsonPath("$[1].mail", equalTo("alisa@malla.com")))
-                .andExpect(jsonPath("$[1].userFree", equalTo("user10")));
+                .andExpect(jsonPath("$[1].userFree", equalTo("user10")))
+                .andExpect(jsonPath("$[1].numCompleted", equalTo("13")));
 
     }
 
@@ -65,8 +67,8 @@ public class CandidatesTest {
         mockMvc.perform(post("/candidates")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"name\": \"Olga\", \"lastName\": \"Caparros\", \"age\": \"46\", \"mail\": \"olga@capa.com\"," +
-                        " \"userFree\":\"user05\"}")
-        ).andExpect(status().is(200));
+                        " \"userFree\":\"user05\", \"numCompleted\":\"3\"}"))
+        .andExpect(status().is(200));
 
         var candidates = candidateRepository.findAll();
 
@@ -75,7 +77,9 @@ public class CandidatesTest {
                 hasProperty("lastName", is("Caparros")),
                 hasProperty("age", is(46)),
                 hasProperty("mail", is("olga@capa.com")),
-                hasProperty("userFree", is("user05")))
+                hasProperty("userFree", is("user05")),
+                hasProperty("numCompleted", is("3")))
+
         ));
 
     }

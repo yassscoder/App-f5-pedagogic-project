@@ -14,14 +14,16 @@ public class Candidate {
     private Integer age;
     private String mail;
     private String userFree;
+    private String numCompleted;
 
-    public Candidate(Long id, String name, String lastName, Integer age, String mail, String userFree){
+    public Candidate(Long id, String name, String lastName, Integer age, String mail, String userFree, String numCompleted){
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
         this.mail = mail;
         this.userFree = userFree;
+        this.numCompleted = numCompleted;
     }
 
     public Candidate(){
@@ -75,5 +77,13 @@ public class Candidate {
 
     public void setUserFree(String userFree) {
         this.userFree = userFree;
+    }
+
+    public String getNumCompleted() {
+        return numCompleted;
+    }
+
+    public void setNumCompleted(String numCompleted) {
+        this.numCompleted = numCompleted;
     }
 }
