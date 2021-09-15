@@ -30,12 +30,6 @@ public class CandidateController {
         return candidateRepository.findAll();
     }
 
-    @GetMapping("/candidate")
-    public static void main(String[]args){
-        JsonFreecodecampHttp jsonFreecodecampHttp= new JsonFreecodecampHttp();
-        jsonFreecodecampHttp.main();
-    }
-
 
     @PostMapping("/candidates")
     public ResponseEntity<String> addCandidate(@RequestBody Candidate candidate){
