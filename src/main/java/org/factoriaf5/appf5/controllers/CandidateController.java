@@ -1,5 +1,6 @@
 package org.factoriaf5.appf5.controllers;
 
+import org.factoriaf5.appf5.JsonFreecodecampHttp;
 import org.factoriaf5.appf5.domain.Candidate;
 import org.factoriaf5.appf5.repositories.CandidateRepository;
 import org.factoriaf5.appf5.service.ResponseFreeCodeCampApi;
@@ -17,6 +18,7 @@ import java.util.List;
 @RestController
 public class CandidateController {
     private CandidateRepository candidateRepository;
+
     @Autowired
     public CandidateController(CandidateRepository candidateRepository){
         this.candidateRepository = candidateRepository;
@@ -27,6 +29,13 @@ public class CandidateController {
         ResponseFreeCodeCampApi.getExercisesDone();
         return candidateRepository.findAll();
     }
+
+    @GetMapping("/candidate")
+    public static void main(String[]args){
+        JsonFreecodecampHttp jsonFreecodecampHttp= new JsonFreecodecampHttp();
+        jsonFreecodecampHttp.main();
+    }
+
 
     @PostMapping("/candidates")
     public ResponseEntity<String> addCandidate(@RequestBody Candidate candidate){
