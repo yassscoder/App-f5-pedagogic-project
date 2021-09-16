@@ -10,9 +10,8 @@ import java.net.http.HttpResponse;
 
 public class ResponseFreeCodeCampApi {
 
-    public static void getExercisesDone() throws IOException, InterruptedException {
+    public static int getExercisesDone(String userName) throws IOException, InterruptedException {
 
-        String userName = "fcccc63c19d-3f28-486a-86c2-d614de411e74";
 
         String API_FREECODE_URL = "https://api.freecodecamp.org/api/users/get-public-profile?username=" + userName;
 
@@ -33,8 +32,7 @@ public class ResponseFreeCodeCampApi {
                 .getJSONObject(userName)
                 .getJSONArray("completedChallenges");
 
-
-        System.out.println("La candidata " + userName + " ha completado " + completedChallenges.length() + " ejercicios");
+    return completedChallenges.length();
     }
 
 }
