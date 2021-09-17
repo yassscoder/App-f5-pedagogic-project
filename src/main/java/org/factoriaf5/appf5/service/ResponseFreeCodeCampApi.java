@@ -7,6 +7,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ResponseFreeCodeCampApi {
 
@@ -31,9 +33,13 @@ public class ResponseFreeCodeCampApi {
                 .getJSONObject("user")
                 .getJSONObject(userName)
                 .getJSONArray("completedChallenges");
+
+        List<String> listDoneExercises= new ArrayList<String>();
+
         for (int i = 0; i < completedChallenges.length(); i++) {
             JSONObject jsonObject = completedChallenges.getJSONObject(i);
             String idExercise = jsonObject.getString("id");
+            listDoneExercises.add(idExercise);
             System.out.println(idExercise);
         }
     return completedChallenges.length();
