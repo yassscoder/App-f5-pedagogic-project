@@ -31,7 +31,11 @@ public class ResponseFreeCodeCampApi {
                 .getJSONObject("user")
                 .getJSONObject(userName)
                 .getJSONArray("completedChallenges");
-
+        for (int i = 0; i < completedChallenges.length(); i++) {
+            JSONObject jsonObject = completedChallenges.getJSONObject(i);
+            String idExercise = jsonObject.getString("id");
+            System.out.println(idExercise);
+        }
     return completedChallenges.length();
     }
 
