@@ -15,17 +15,19 @@ import java.util.List;
 @RestController
 public class CandidateController {
     private CandidateRepository candidateRepository;
+    private ResponseFreeCodeCampApi responseFreeCodeCampApi;
 
     @Autowired
-    public CandidateController(CandidateRepository candidateRepository) {
+    public CandidateController(CandidateRepository candidateRepository, ResponseFreeCodeCampApi responseFreeCodeCampApi) {
         this.candidateRepository = candidateRepository;
+        this.responseFreeCodeCampApi = responseFreeCodeCampApi;
     }
 
     @GetMapping("/candidates")
     public List<Candidate> allCandidates() throws IOException, InterruptedException {
         List<Candidate> candidates = candidateRepository.findAll();
         for (int i = 0; i < candidates.size(); i++) {
-            var numeroEjs = ResponseFreeCodeCampApi.getExercisesDone(candidates.get(i).getUserFree());
+            var numeroEjs = responseFreeCodeCampApi.getExercisesDone(candidates.get(i).getUserFree());
             System.out.println(numeroEjs);
             candidates.get(i).setNumCompleted(String.valueOf(numeroEjs));
         }
