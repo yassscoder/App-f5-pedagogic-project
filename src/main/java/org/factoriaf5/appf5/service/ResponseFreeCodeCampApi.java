@@ -14,10 +14,13 @@ import java.util.List;
 
 @Component
 public class ResponseFreeCodeCampApi {
-   private List <String> javaScriptExercises = List.of("56533eb9ac21ba0edf2244a8", "bd7123c9c441eddfaeb4bdef"); //lista ejercicios
-    private List <String> htmlExercises = List.of("5664820f61c48e80c9fa476c", "56533eb9ac21ba0edf2244dc"); //lista ejercicios
 
-    public int getExercisesDone(String userName) throws IOException, InterruptedException {
+    private List <String> javaScriptExercises = List.of("56533eb9ac21ba0edf2244a8", "bd7123c9c441eddfaeb4bdef"); //lista ejercicios
+    private List <String> htmlExercises = List.of("5664820f61c48e80c9fa476c", "56533eb9ac21ba0edf2244dc"); //lista ejercicios
+    private List <String> cssExercises = List.of("56533eb9ac21ba0edf2244ae", "bd7993c9ca9feddfaeb7bdef");
+
+
+    public List<Integer> getExercisesDone(String userName) throws IOException, InterruptedException {
 
 
         String API_FREECODE_URL = "https://api.freecodecamp.org/api/users/get-public-profile?username=" + userName;
@@ -39,30 +42,36 @@ public class ResponseFreeCodeCampApi {
                 .getJSONObject(userName)
                 .getJSONArray("completedChallenges");
 
-        List<String> listDoneExercises= new ArrayList<String>();
 
-        int cuenta = 0;
+        int cuentaJS = 0;
         int cuentaHtml = 0;
+        int cuentaCss = 0;
 
 
         for (int i = 0; i < completedChallenges.length(); i++) {
+
             JSONObject jsonObject = completedChallenges.getJSONObject(i);
             String idExercise = jsonObject.getString("id");
-           if (javaScriptExercises.contains(idExercise)){
-               cuenta++;
-           }
-           else if (htmlExercises.contains(idExercise)){
-               cuentaHtml++;
-           }
+
+            if (javaScriptExercises.contains(idExercise)) {
+                cuentaJS++;
+
+            } else if (htmlExercises.contains(idExercise)) {
+                cuentaHtml++;
+
+            } else if (cssExercises.contains(idExercise)) {
+                cuentaCss++;
+            }
         }
-        List<Integer> listTotalExercises = new ArrayList<>();
-        listTotalExercises.add(cuenta);
-        listTotalExercises.add(cuentaHtml);
 
-        System.out.println(listTotalExercises);
+            List<Integer> listTotalExercises = new ArrayList<>();
+
+                listTotalExercises.add(cuentaHtml);
+                listTotalExercises.add(cuentaJS);
+                listTotalExercises.add(cuentaCss);
+
+            return listTotalExercises;
 
 
-        return cuenta;
-    }
 
-}
+}}
