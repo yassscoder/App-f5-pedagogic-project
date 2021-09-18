@@ -22,6 +22,10 @@ export const NavBar = () => (
                 <li className={"nav-main__item"}>
                     <Link to={"/candidate-list"} className={"nav-main__link nav-main__link--cl"}>Candidate List</Link>
                 </li>
+
+                <li className={"nav-main__item"}>
+                    <Link to={"/administrator"} className={"nav-main__link nav-main__link--cl"}>Administrator</Link>
+                </li>
             </ul>
         </nav>
 )

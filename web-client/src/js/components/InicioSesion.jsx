@@ -5,6 +5,7 @@ import fondoNaranja from "./assets/logoNaranjaF5.png";
 import usuario from "./assets/usuario.png";
 import candado from "./assets/candado.png";
 import {useState} from "react";
+import Rossy from "./assets/Rossy.jpg";
 
 export const InicioSesion = () => {
 
@@ -28,7 +29,7 @@ export const InicioSesion = () => {
 
     const passwordHandler = (e) => {
         setPassword(e.target.value)
-        if (e.target.value.length < 3 || e.target.value.length > 8){
+        if (e.target.value.length < 3 || e.target.value.length > 8) {
             setPasswordError('min 3 y max 8')
             if (!e.target.value) {
                 setPasswordError("Password It can't be empty")
@@ -50,12 +51,12 @@ export const InicioSesion = () => {
         }
     }
 
-    /* <div className={"inicioSesion-main"}>
-         <div className={"inicioSesion-main__fondo"}>
-             <img src={fondo}/>
-         </div>*/
+
     return (
+
         <div className="container">
+            <div className="img-container" style={{backgroundImage: `url(${Rossy})`}}>
+            </div>
             <div className="sub-container">
                 <div className="banner-img">
                     <img src={fondoNaranja}/>
@@ -74,13 +75,14 @@ export const InicioSesion = () => {
                     <div className="input-fields">
                         {(passwordError && passwordDirty) && <div style={{color: 'red'}}>{passwordError}</div>}
                         {/*<img src={candado}/>*/}
-                        <input onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)} name='password' type="password"
+                        <input onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)}
+                               name='password' type="password"
                                className="input" placeholder='Contrasena...'/>
                         <div className="submit">ENTRAR</div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
 
     )
