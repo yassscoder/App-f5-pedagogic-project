@@ -1,7 +1,8 @@
 body {
   background-color: var(--third-color);
 }
-.table{
+
+.table {
 
   border-collapse: collapse;
   margin: 3rem auto;
@@ -13,26 +14,30 @@ body {
 
   &__header {
     background-color: var(--secondary-color);
-    color:white;
+    color: white;
   }
-  &__body{
+
+  &__body {
     background: white;
   }
-  &__info{
+
+  &__info {
     font-weight: 500;
     border-bottom: thin solid var(--third-color);
     padding: 1rem 2rem;
 
-    &--bold{
+    &--bold {
       font-weight: bolder;
       text-align: initial;
     }
-    &--flex{
-      display:flex;
+
+    &--flex {
+      display: flex;
       gap: 0.7rem;
     }
   }
-  &__icon{
+
+  &__icon {
     color: var(--third-color);
   }
 }
