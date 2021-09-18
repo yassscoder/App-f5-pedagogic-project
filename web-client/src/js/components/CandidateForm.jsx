@@ -18,8 +18,7 @@ export const CandidateForm = (props) => {
                     lastName: '',
                     age: '',
                     mail: '',
-                    userFree: '',
-                    numCompleted: ''
+                    userFree: ''
 
                 }}
                 onSubmit={

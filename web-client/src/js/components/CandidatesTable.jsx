@@ -11,7 +11,10 @@ export const CandidatesTable = (props) =>
                 <div className={"table__info"} >{ props.candidate.age}</div>
                 <div className={"table__info"} >{ props.candidate.mail}</div>
                 <div className={"table__info"} >{ props.candidate.userFree}</div>
-                <div className={"table__info"} >{ props.candidate.numCompleted}</div>
+                <div className={"table__info"} >{ props.candidate.completedHtml}</div>
+                <div className={"table__info"} >{ props.candidate.completedJS}</div>
+                <div className={"table__info"} >{ props.candidate.completedCss}</div>
+
             </div>
         </div>
     </div>

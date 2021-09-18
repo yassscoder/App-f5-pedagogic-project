@@ -16,7 +16,7 @@ import java.util.List;
 public class ResponseFreeCodeCampApi {
 
     private List <String> javaScriptExercises = List.of("56533eb9ac21ba0edf2244a8", "bd7123c9c441eddfaeb4bdef"); //lista ejercicios
-    private List <String> htmlExercises = List.of("5664820f61c48e80c9fa476c", "56533eb9ac21ba0edf2244dc"); //lista ejercicios
+    private List <String> htmlExercises = List.of("5664820f61c48e80c9fa476c", "56533eb9ac21ba0edf2244dc");
     private List <String> cssExercises = List.of("56533eb9ac21ba0edf2244ae", "bd7993c9ca9feddfaeb7bdef");
 
 
@@ -70,7 +70,7 @@ public class ResponseFreeCodeCampApi {
                 listTotalExercises.add(cuentaJS);
                 listTotalExercises.add(cuentaCss);
 
-            return listTotalExercises;
+            return listTotalExercises; //posicion 0: cuentaHTML; posicion 1:cuentaJS; posicion 2:cuentaCSS
 
 
 

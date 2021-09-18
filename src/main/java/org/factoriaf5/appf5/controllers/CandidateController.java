@@ -23,13 +23,19 @@ public class CandidateController {
         this.responseFreeCodeCampApi = responseFreeCodeCampApi;
     }
 
-    @GetMapping("/candidates")
+    @GetMapping("/candidates")  //IMPLEMENTAR TRY & CATCH!!
     public List<Candidate> allCandidates() throws IOException, InterruptedException {
         List<Candidate> candidates = candidateRepository.findAll();
         for (int i = 0; i < candidates.size(); i++) {
             var numeroEjs = responseFreeCodeCampApi.getExercisesDone(candidates.get(i).getUserFree());
-            System.out.println(numeroEjs);
-            candidates.get(i).setNumCompleted(String.valueOf(numeroEjs));
+
+            var htmlExercises = numeroEjs.get(0);
+            var jsExercises= numeroEjs.get(1);
+            var cssExercises =numeroEjs.get(2);
+
+            candidates.get(i).setCompletedHtml(String.valueOf(htmlExercises));
+            candidates.get(i).setCompletedJS(String.valueOf(jsExercises));
+            candidates.get(i).setCompletedCss(String.valueOf(cssExercises));
         }
         return candidates;
     }
