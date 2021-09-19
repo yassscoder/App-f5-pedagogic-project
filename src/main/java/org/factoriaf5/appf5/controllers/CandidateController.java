@@ -4,6 +4,8 @@ import org.factoriaf5.appf5.domain.Candidate;
 import org.factoriaf5.appf5.domain.Training;
 import org.factoriaf5.appf5.repositories.CandidateRepository;
 import org.factoriaf5.appf5.service.ResponseFreeCodeCampApi;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,20 +25,26 @@ public class CandidateController {
         this.responseFreeCodeCampApi = responseFreeCodeCampApi;
     }
 
-    @GetMapping("/candidates")  //IMPLEMENTAR TRY & CATCH!!
+    @GetMapping("/candidates")
     public List<Candidate> allCandidates() throws IOException, InterruptedException {
         List<Candidate> candidates = candidateRepository.findAll();
         for (int i = 0; i < candidates.size(); i++) {
-            var numeroEjs = responseFreeCodeCampApi.getExercisesDone(candidates.get(i).getUserFree());
+            try {
+                var numeroEjs = responseFreeCodeCampApi.getExercisesDone(candidates.get(i).getUserFree());
 
-            var htmlExercises = numeroEjs.get(0);
-            var jsExercises= numeroEjs.get(1);
-            var cssExercises =numeroEjs.get(2);
+                var htmlExercises = numeroEjs.get(0);
+                var jsExercises = numeroEjs.get(1);
+                var cssExercises = numeroEjs.get(2);
 
-            candidates.get(i).setCompletedHtml(String.valueOf(htmlExercises));
-            candidates.get(i).setCompletedJS(String.valueOf(jsExercises));
-            candidates.get(i).setCompletedCss(String.valueOf(cssExercises));
+                candidates.get(i).setCompletedHtml(String.valueOf(htmlExercises));
+                candidates.get(i).setCompletedJS(String.valueOf(jsExercises));
+                candidates.get(i).setCompletedCss(String.valueOf(cssExercises));
+            }
+            catch (JSONException exception) {
+                System.out.println(" Error al acceder al usuario de Free code camp:" + (candidates.get(i).getUserFree()));
+            }
         }
+
         return candidates;
     }
 
