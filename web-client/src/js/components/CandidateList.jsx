@@ -4,7 +4,7 @@ import "../../scss/Candidates.scss";
 import {CandidatesTable} from "./CandidatesTable";
 
 export const CandidateList = (props) => (
-
+    <div className={"table__container"}>
     <table className={"table"}>
         <thead>
         <tr className={"table__header"}>
@@ -21,5 +21,6 @@ export const CandidateList = (props) => (
         )}
         </tbody>
     </table>
+    </div>
 );
 
