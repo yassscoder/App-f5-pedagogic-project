@@ -11,7 +11,7 @@ export const CandidateList = (props) => (
             <th className={"table__info table__info--bold"}>Aspirante</th>
             <th className={"table__info  table__info--bold"}>EDAD</th>
             <th className={"table__info table__info--bold"}>EMAIL</th>
-            <th className={"table__info table__info--bold"}>USUARIO FREECODECAMP</th>
+            <th className={"table__info table__info--bold"}>PROGRESO</th>
         </tr>
 
         </thead>
@@ -22,3 +22,4 @@ export const CandidateList = (props) => (
         </tbody>
     </table>
 );
+

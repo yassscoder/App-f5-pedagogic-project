@@ -14,14 +14,20 @@ public class Candidate {
     private Integer age;
     private String mail;
     private String userFree;
+    private String completedHtml;
+    private String completedJS;
+    private String completedCss;
 
-    public Candidate(Long id, String name, String lastName, Integer age, String mail, String userFree){
+    public Candidate(Long id, String name, String lastName, Integer age, String mail, String userFree, String completedHtml, String completedJS, String completedCss){
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
         this.mail = mail;
         this.userFree = userFree;
+        this.completedHtml = completedHtml;
+        this.completedJS = completedJS;
+        this.completedCss = completedCss;
     }
 
     public Candidate(){
@@ -75,5 +81,29 @@ public class Candidate {
 
     public void setUserFree(String userFree) {
         this.userFree = userFree;
+    }
+
+    public String getCompletedHtml() {
+        return completedHtml;
+    }
+
+    public void setCompletedHtml(String completedHtml) {
+        this.completedHtml = completedHtml;
+    }
+
+    public String getCompletedJS() {
+        return completedJS;
+    }
+
+    public void setCompletedJS(String completedJS) {
+        this.completedJS = completedJS;
+    }
+
+    public String getCompletedCss() {
+        return completedCss;
+    }
+
+    public void setCompletedCss(String completedCss) {
+        this.completedCss = completedCss;
     }
 }

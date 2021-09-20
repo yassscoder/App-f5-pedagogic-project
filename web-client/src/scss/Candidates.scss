@@ -31,9 +31,14 @@ body {
       text-align: initial;
     }
 
-    &--flex {
+    &--progress {
       display: flex;
-      gap: 0.7rem;
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    &--link {
+      display: flex;
     }
   }
 
@@ -41,6 +46,4 @@ body {
     color: var(--third-color);
   }
 }
-
-
 
