@@ -35,7 +35,7 @@ export const InicioSesion = () => {
                 setPasswordError("Password It can't be empty")
             }
         } else {
-            setEmailError("")
+            setPasswordError("")
         }
 
     }
