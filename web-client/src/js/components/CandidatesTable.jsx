@@ -1,22 +1,26 @@
 import * as React from "react";
+import {AccountCircle} from '@material-ui/icons';
+import {ProgressBar} from "./ProgressBar";
 
-export const CandidatesTable = (props) =>
 
-    <div>
-        <div className={"table__content"}>
+export const CandidatesTable = (props) => (
 
-            <div className={"table__row"}>
-                <div className={"table__info"} >{ props.candidate.name}</div>
-                <div className={"table__info"} >{ props.candidate.lastName}</div>
-                <div className={"table__info"} >{ props.candidate.age}</div>
-                <div className={"table__info"} >{ props.candidate.mail}</div>
-                <div className={"table__info"} >{ props.candidate.userFree}</div>
-                <div className={"table__info"} >{ props.candidate.completedHtml}</div>
-                <div className={"table__info"} >{ props.candidate.completedJS}</div>
-                <div className={"table__info"} >{ props.candidate.completedCss}</div>
 
-            </div>
-        </div>
-    </div>
+    <tr className={"table__row"}>
+        <td className={"table__info"}>{props.candidate.name} {props.candidate.lastName}
+            <a className={"table__info--link"} href={"https://www.freecodecamp.org/" + `${props.candidate.userFree}`} title="Perfil FreeCodeCamp"
+               target="_blank">
+                <AccountCircle className={"table__icon"}/> </a></td>
+        <td className={"table__info"}>{props.candidate.age}</td>
+        <td className={"table__info"}>{props.candidate.mail}</td>
+        <td className={"table__info table__info--progress"}> <ProgressBar done={props.candidate.completedHtml}/>
+            <ProgressBar done={props.candidate.completedJS}/>
+            <ProgressBar done={props.candidate.completedCss}/>
+        </td>
+    </tr>
+
+
+);
+
 
 

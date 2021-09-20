@@ -1,50 +1,50 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-$Primary-Font: 'Poppins', sans-serif;
-
-
 body {
   background-color: var(--third-color);
 }
 
-.container {
-  max-width: 90%;
-  margin: 3rem auto;
-}
-
 .table {
 
-  &__border {
-    display: flex;
-    background: var(--secondary-color);
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
+  border-collapse: collapse;
+  margin: 3rem auto;
+  font-size: 1rem;
+  min-width: 400px;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  &__header {
+    background-color: var(--secondary-color);
+    color: white;
   }
-  &__info{
-    flex: 1 1 20%;
-    text-align: center;
-    color: var(--primary-color);
-    text-decoration: none;
-    border: 0.1rem solid var(--third-color);
-    &--bold{
+
+  &__body {
+    background: white;
+  }
+
+  &__info {
+    font-weight: 500;
+    border-bottom: thin solid var(--third-color);
+    padding: 1rem 2rem;
+
+    &--bold {
       font-weight: bolder;
+      text-align: initial;
+    }
+
+    &--progress{
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+    }
+    &--link{
+      display:flex;
     }
   }
-  &__content {
-    background-color: var(--fourth-color);
-    border-bottom-left-radius: 0.3rem;
-    border-bottom-right-radius: 0.3rem;
-  }
-  &__row {
-    display: flex;
+
+  &__icon {
+    color: var(--third-color);
   }
 }
-
 
 
 
