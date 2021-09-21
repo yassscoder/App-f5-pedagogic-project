@@ -7,6 +7,7 @@ import candado from "./assets/candado.png";
 import {useState} from "react";
 import Rossy from "./assets/Rossy.jpg";
 
+
 export const InicioSesion = () => {
 
     const [email, setEmail] = useState('')

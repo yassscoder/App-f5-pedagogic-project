@@ -34,8 +34,6 @@ body, html {
   border-radius: 1rem 1rem 1rem 1rem;
   opacity: 0.75;
 }
-
-
 .sub-container .banner-img {
   width: 220px;
   height: 100%;
@@ -49,13 +47,13 @@ body, html {
   width: 25rem;
   border-radius: 1rem 0px 0rem 1rem;
 }
-
 .sub-container .login-form {
-  width: 20rem;
+  width: 24rem;
   height: 100%;
   position: relative;
   text-align: center;
-  padding: 3rem 1rem 0;
+  padding: 3rem 2rem 1px;
+  margin-left: 10.7rem;
 }
 
 .sub-container .login-form .title {
@@ -64,38 +62,57 @@ body, html {
   letter-spacing: 0.4rem;
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  margin-left: 13rem;
-  width: 18rem;
+  margin-left: 0.1rem;
+  margin-top: -1rem;
 }
 
 .sub-container .login-form .input {
-  margin: 2rem 1rem 1rem;
+  margin: 1rem;
   width: 100%;
   padding: 0.2rem;
   display: flex;
   border-radius: 0.3rem;
   border-color: #f3f2f2;
   color: #f65728;
-  margin-left: 13rem;
+  margin-left: 0rem;
+
 }
 
 .sub-container .submit {
-  bottom: 0;
-  left: 0;
   border-radius: 0.3rem;
   padding: 0.2rem;
-
   background: #d95826;
   color: #fff;
   font-size: 1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   cursor: pointer;
-  margin-left: 18rem;
+  margin-left: 4.5rem;
   width: 7rem;
   height: 2rem;
-  display: flex;
-  padding-left: 1.5rem;
+  margin-top: 0.5rem;
 
 }
 
+
+
+
+
+
+.input__icon {
+  margin-left: -21rem;
+  color: grey;
+}
+.table__icon {
+  margin-left: -21rem;
+}
+.errorline {
+  background-color: aqua;
+}
+.login-form  {
+  width: 20rem;
+  margin-left: 13rem;
+}
+.input-fields {
+  margin: 2rem;
+}
