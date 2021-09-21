@@ -1,7 +1,7 @@
 import * as React from "react";
 import "../../scss/InicioSesionStyles.scss";
 import fondo from "./assets/fondoF5.jpg";
-import fondoNaranja from "./assets/logoNaranjaF5.png";
+import fondoNaranja from "./assets/logoF5.png";
 import usuario from "./assets/usuario.png";
 import candado from "./assets/candado.png";
 import {useState} from "react";
@@ -64,21 +64,21 @@ export const InicioSesion = () => {
                 </div>
 
                 <div className="login-form">
-                    <div className="title">
+                    <h1 className="title">
                         INICIAR SESION
-                    </div>
+                    </h1>
                     <div className="input-fields">
                         {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
                         {/*<img src={usuario}/>*/}
                         <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} name='email'
-                               type="text" className="input" placeholder='Administrador...'/>
+                               type="text" className="input" placeholder='🙎‍♀   Administrador...'/>
                     </div>
                     <div className="input-fields">
                         {(passwordError && passwordDirty) && <div style={{color: 'red'}}>{passwordError}</div>}
                         {/*<img src={candado}/>*/}
                         <input onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)}
                                name='password' type="password"
-                               className="input" placeholder='Contrasena...'/>
+                               className="input" placeholder='🔒   Contrasena...'/>
                         <div className="submit">ENTRAR</div>
                     </div>
                 </div>
