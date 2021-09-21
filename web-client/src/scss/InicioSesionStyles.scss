@@ -9,17 +9,18 @@ body, html {
   height: 100%;
 
 }
+
 .container {
   margin: 0;
 }
 
 .img-container {
-  position:fixed;
+  position: fixed;
   z-index: -1;
-  top:0;
-  left:0;
-  min-width:100%;
-  min-height:100%;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
   background-repeat: no-repeat;
   opacity: 0.5;
 }
@@ -35,6 +36,7 @@ body, html {
   opacity: 0.75;
 
 }
+
 .sub-container .banner-img {
   width: 220px;
   height: 50%;
@@ -49,6 +51,7 @@ body, html {
   padding: 2rem;
   background-color: #f65728;
 }
+
 .sub-container .login-form {
   width: 24rem;
   height: 100%;
@@ -95,28 +98,40 @@ body, html {
   margin-top: 0.5rem;
 
 }
+
 .input__icon {
   margin-left: -21rem;
   color: grey;
 }
+
 .table__icon {
   margin-left: -21rem;
 }
+
 .errorline {
   background-color: aqua;
 }
-.login-form  {
+
+.login-form {
   width: 20rem;
   margin-left: 13rem;
 }
+
 .input-fields {
   margin: 2rem;
 }
-@media (max-width: 992px) {
-  .container {
-    font-size: 12px;
+
+
+
+/*@media (min-width: 768px) and (max-width: 991px) {
+  .container, h1, {
+    padding-right: 15rem;
+    padding-left: 15rem;
   }
-}
+}*/
+
+
+
 .input-fields {
   max-height: 30px;
 }
