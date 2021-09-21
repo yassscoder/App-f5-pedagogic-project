@@ -14,17 +14,22 @@ public class Candidate {
     private Integer age;
     private String mail;
     private String userFree;
+
+    @ManyToOne
+    @JoinColumn(name = "training_id")
+    private Training training;
     private String completedHtml;
     private String completedJS;
     private String completedCss;
 
-    public Candidate(Long id, String name, String lastName, Integer age, String mail, String userFree, String completedHtml, String completedJS, String completedCss){
+    public Candidate(Long id, String name, String lastName, Integer age, String mail, String userFree, Training training, String completedHtml, String completedJS, String completedCss){
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
         this.mail = mail;
         this.userFree = userFree;
+        this.training = training;
         this.completedHtml = completedHtml;
         this.completedJS = completedJS;
         this.completedCss = completedCss;
@@ -34,6 +39,12 @@ public class Candidate {
 
     }
 
+    public Training getTraining(){
+        return training;
+    }
+    public Training setTraining(Training training) {
+        return training;
+    }
 
     public Long getId() {
         return id;
