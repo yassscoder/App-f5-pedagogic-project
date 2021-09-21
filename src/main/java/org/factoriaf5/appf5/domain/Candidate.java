@@ -15,7 +15,7 @@ public class Candidate {
     private String mail;
     private String userFree;
 
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "training_id")
     private Training training;
     private String completedHtml;

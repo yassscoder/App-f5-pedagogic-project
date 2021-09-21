@@ -17,6 +17,8 @@ public class DataLoader {
     private CandidateRepository candidateRepository;
     private TrainingRepository trainingRepository;
 
+
+
     @Autowired
     public DataLoader(CandidateRepository candidateRepository, TrainingRepository trainingRepository) {
         this.candidateRepository = candidateRepository;
@@ -25,16 +27,17 @@ public class DataLoader {
 
     @PostConstruct
     void cargarDatosDePrueba() {
-        List<Candidate> candidates = List.of(
-                new Candidate(1L, "Olga", "Caparros", 46, "olga@capa.com", "yassscoder", Training, "3", "1", "0"),
-                new Candidate(2L, "Alisa", "Maravillosa", 35, "alisa@malla.com", "fcccc63c19d-3f28-486a-86c2-d614de411e74", Training, "13", "2", "3"),
-                new Candidate(3L, "Yas", "Caparros", 33, "yas@capa.com", "user05",Training, "3", "1", "2")
-        );
-
         List<Training> trainings = List.of(
                 new Training(1L, "Barcelona", "Femtech P1", 850),
                 new Training(2L, "Madrid", "Front P3", 300)
         );
+
+        List<Candidate> candidates = List.of(
+                new Candidate(1L, "Olga", "Caparros", 46, "olga@capa.com", "yassscoder", trainings.get(0), "3", "1", "0"),
+                new Candidate(2L, "Alisa", "Maravillosa", 35, "alisa@malla.com", "fcccc63c19d-3f28-486a-86c2-d614de411e74", trainings.get(0), "13", "2", "3")
+//                new Candidate(3L, "Yas", "Caparros", 33, "yas@capa.com", "user05",Training_id, "3", "1", "2")
+        );
+
 
         candidateRepository.saveAll(candidates);
         trainingRepository.saveAll(trainings);
