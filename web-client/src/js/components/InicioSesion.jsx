@@ -55,31 +55,31 @@ export const InicioSesion = () => {
 
     return (
 
-        <div className="container">
-            <div className="img-container" style={{backgroundImage: `url(${Rossy})`}}>
+        <div className="inicio">
+            <div className="inicio__fondo" style={{backgroundImage: `url(${Rossy})`}}>
             </div>
-            <div className="sub-container">
-                <div className="banner-img">
-                    <img src={fondoNaranja}/>
+            <div className="inicio__login">
+                <div className="inicio__logo">
+                    <img className="inicio__f5" src={fondoNaranja}/>
                 </div>
 
-                <div className="login-form">
-                    <h1 className="title">
+                <div className="inicio__form">
+                    <h1 className="inicio__title">
                         INICIAR SESION
                     </h1>
-                    <div className="input-fields">
+                    <div className="inicio__input">
                         {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
                         {/*<img src={usuario}/>*/}
                         <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} name='email'
-                               type="text" className="input" placeholder='🙎‍♀   Administrador...'/>
+                               type="text" className="inicio__admin" placeholder='🙎‍♀   Administrador...'/>
                     </div>
-                    <div className="input-fields">
+                    <div className="inicio__input">
                         {(passwordError && passwordDirty) && <div style={{color: 'red'}}>{passwordError}</div>}
                         {/*<img src={candado}/>*/}
                         <input onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)}
                                name='password' type="password"
-                               className="input" placeholder='🔒   Contrasena...'/>
-                        <div className="submit">ENTRAR</div>
+                               className="inicio__password" placeholder='🔒   Contraseña...'/>
+                        <div className="inicio__submit">ENTRAR</div>
                     </div>
                 </div>
 
