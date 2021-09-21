@@ -4,14 +4,14 @@ import "../../scss/Candidates.scss";
 import {CandidatesTable} from "./CandidatesTable";
 
 export const CandidateList = (props) => (
-
+    <div className={"table__container"}>
     <table className={"table"}>
         <thead>
         <tr className={"table__header"}>
             <th className={"table__info table__info--bold"}>Aspirante</th>
             <th className={"table__info  table__info--bold"}>EDAD</th>
             <th className={"table__info table__info--bold"}>EMAIL</th>
-            <th className={"table__info table__info--bold"}>USUARIO FREECODECAMP</th>
+            <th className={"table__info table__info--bold"}>PROGRESO</th>
         </tr>
 
         </thead>
@@ -21,4 +21,6 @@ export const CandidateList = (props) => (
         )}
         </tbody>
     </table>
+    </div>
 );
+

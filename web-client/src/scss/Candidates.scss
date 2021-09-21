@@ -7,7 +7,7 @@ body {
   border-collapse: collapse;
   margin: 3rem auto;
   font-size: 1rem;
-  min-width: 400px;
+  width: 95%;
   border-radius: 0.6rem;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -16,7 +16,12 @@ body {
     background-color: var(--secondary-color);
     color: white;
   }
-
+  &__container{
+    //overflow-x: auto;
+    margin: 4rem;
+    display: flex;
+    justify-content: center;
+  }
   &__body {
     background: white;
   }
@@ -31,9 +36,14 @@ body {
       text-align: initial;
     }
 
-    &--flex {
+    &--progress {
       display: flex;
-      gap: 0.7rem;
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    &--link {
+      display: flex;
     }
   }
 
@@ -41,6 +51,4 @@ body {
     color: var(--third-color);
   }
 }
-
-
 
