@@ -33,10 +33,17 @@ public class DataLoader {
                 new Candidate("Alisa", "Maravillosa", 35, "alisa@malla.com", "fcccc63c19d-3f28-486a-86c2-d614de411e74", "13", "2", "3")
 //                new Candidate(3L, "Yas", "Caparros", 33, "yas@capa.com", "user05", "3", "1", "2")
         );
+        List<Candidate> candidates1 = List.of(
+                new Candidate("Olga", "Caparros", 46, "olga@capa.com", "yassscoder", "3", "1", "0"),
+                new Candidate("Alisa", "Maravillosa", 35, "alisa@malla.com", "fcccc63c19d-3f28-486a-86c2-d614de411e74", "13", "2", "3"),
+                new Candidate( "Yas", "Caparros", 33, "yas@capa.com", "user05", "3", "1", "2")
+        );
 
         Training training = new Training(1L, "Barcelona", "Femtech P1", 850, candidates);
+        Training training1 = new Training(2L, "Madrid", "Front P3", 300, candidates1);
 
         trainingRepository.save(training);
+        trainingRepository.save(training1);
     }
 
 
