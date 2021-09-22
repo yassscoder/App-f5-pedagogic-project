@@ -1,23 +1,19 @@
 package org.factoriaf5.appf5.controllers;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
-public class SecurityController {
-    @RequestMapping("/")
-    public String getSecurityPage() {
-    return "InicioSesion";
-}
-@RequestMapping("/login")
-    public String getLogin(@RequestParam(value ="error", required = false)String error,
-                           @RequestParam(value ="logout", required = false)String logout,
-                           Model model) {
-        model.addAttribute("error", error != null);
-        model.addAttribute("logout", logout != null);
-        return "login";
+
+    @CrossOrigin(origins={ "http://localhost:3000", "http://localhost:8080" })
+    @RestController
+    public class  SecurityController {
+
+        @GetMapping(path = "/basicauth")
+        public AuthenticationBean authenticate() {
+            //throw new RuntimeException("Some Error has Happened! Contact Support at ***-***");
+            return new AuthenticationBean("You are authenticated");
+        }
     }
-}
+
