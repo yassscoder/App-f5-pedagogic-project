@@ -2,6 +2,8 @@ import * as React from "react";
 import {useState} from "react";
 import {Redirect} from "react-router-dom";
 import {Formik, Field, Form} from "formik";
+import {TrainingSelect} from "./TrainingSelect";
+
 
 function validateNameOrLastName(value) {
     let error;
@@ -69,6 +71,7 @@ function validateUser(value) {
 }
 
 
+
 export const CandidateForm = (props) => {
     const [redirect, setRedirect] = useState (false);
 
@@ -80,12 +83,12 @@ export const CandidateForm = (props) => {
     return <div className="container__form">
             <Formik
                 initialValues={{
+                    training: '',
                     name: '',
                     lastName: '',
                     age: '',
                     mail: '',
                     userFree: ''
-
                 }}
                 onSubmit={
                     (values )=>
@@ -94,6 +97,8 @@ export const CandidateForm = (props) => {
                 }
             >
                 {({errors, touched}) => <Form>
+                    <label htmlFor="training">Formación</label>
+                    <TrainingSelect />
                     <label htmlFor="name">Nombre</label>
                     <Field id="name" name="name" validate={validateNameOrLastName}/>
                     {errors.name && touched.name && <div>{errors.name}</div>}
@@ -110,11 +115,7 @@ export const CandidateForm = (props) => {
                     <Field id="userFree" name="userFree" validate={validateUser}/>
                     {errors.userFree}
                     <button type={"submit"}>Guardar datos</button>
-
                 </Form>}
             </Formik>
-
     </div>
-
-
 };
