@@ -2,7 +2,8 @@ import * as React from "react";
 import {useState} from "react";
 import {Redirect} from "react-router-dom";
 import {Formik, Field, Form} from "formik";
-import TrainingSelect from "./TrainingSelect";
+import {TrainingSelect} from "./TrainingSelect";
+
 
 function validateNameOrLastName(value) {
     let error;
@@ -69,10 +70,7 @@ function validateUser(value) {
 
 }
 
-const options =[
-    {value: "1", label: "rojo" },
-    {value: "2", label: "azul"},
-]
+
 
 export const CandidateForm = (props) => {
     const [redirect, setRedirect] = useState (false);
@@ -100,7 +98,7 @@ export const CandidateForm = (props) => {
             >
                 {({errors, touched}) => <Form>
                     <label htmlFor="training">Formación</label>
-                    <TrainingSelect options={options} />
+                    <TrainingSelect />
                     <label htmlFor="name">Nombre</label>
                     <Field id="name" name="name" validate={validateNameOrLastName}/>
                     {errors.name && touched.name && <div>{errors.name}</div>}

@@ -1,18 +1,48 @@
 import * as React from "react";
-import Select from 'react-select';
 
-export default ({onChange, options, value, className}) => {
+function TrainingsDropDown() {
+    const [loading, setLoading] = React.useState(true);
+    const [items, setItems] = React.useState([]);
+    const [value, setValue] = React.useState("");
+    React.useEffect(() => {
+        let unmounted = false;
+        async function getTrainingsArray() {
+            const response = await fetch(
+                "http://localhost:8080/trainings"
+            );
+            const body = await response.json();
+            if (!unmounted) {
+                setItems(
+                    body.map(({ id,promoName }) => ({ label: id, value: promoName }))
+                );
+                setLoading(false);
+            }
+        }
+        getTrainingsArray();
+        return () => {
+            unmounted = true;
+        };
+    }, []);
 
-    const defaultValue = (options, value) => {
-        return options ? options.find(option=>option.value === value): ""
-    }
-    return(
-        <div className={className}>
-            <Select
-                value ={defaultValue(options, value)}
-                onChange ={ value =>onChange(value)}
-                options={options}
-                />
+    return (
+        <select
+            disabled={loading}
+            value={value}
+            onChange={(e) => setValue(e.currentTarget.value)}
+        >
+            {items.map(({ label, value }) => (
+                <option key={label} value={value}>
+                    {value}
+                </option>
+            ))}
+        </select>
+    );
+}
+
+export const TrainingSelect = () => {
+    return (
+        <div>
+           <TrainingsDropDown/>
         </div>
     )
 }
