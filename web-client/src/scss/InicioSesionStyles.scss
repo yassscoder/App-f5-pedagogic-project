@@ -12,7 +12,7 @@ body, html {
 .inicio {
   margin: 0;
 
-  &__fondo{
+  &__fondo {
     position: fixed;
     z-index: -1;
     top: 0;
@@ -69,14 +69,23 @@ body, html {
   }
 
   &__input {
-
     max-height: 30px;
     padding: 0.3rem;
-    //display: flex;
     border-radius: 0.3rem;
     border-color: #f3f2f2;
     color: #ff4700;
     margin: 2rem 0 2rem 0;
+
+    &__admin {
+      border-radius: 0.3rem;
+      border-color: #f3f2f2;
+
+    }
+    &__password {
+      border-radius: 0.3rem;
+      border-color: #f3f2f2;
+
+    }
 
   }
 
@@ -89,14 +98,14 @@ body, html {
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     cursor: pointer;
-    margin-left: 6rem;
+    margin-left: 6.5rem;
     width: 7rem;
     height: 2rem;
     margin-top: 1.5rem;
 
   }
 
-
+}
   /*
   &__form {
     width: 20rem;
@@ -104,11 +113,11 @@ body, html {
   }
    */
 
-/*  &__input {
-    margin: 2rem;
-    max-height: 30px;
-  }*/
-}
+  /*  &__input {
+      margin: 2rem;
+      max-height: 30px;
+    }*/
+
 
 
 
