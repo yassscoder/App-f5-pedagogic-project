@@ -32,7 +32,7 @@ const [updateTraining, setUpdate] = useState(true)
             <div className={"box__info"}>
                 <h4>Nombre de usario</h4>
                 <input type="text" className="box__input"/>
-                <h4>Contracena</h4>
+                <h4>Contraseña</h4>
                 <input type="text" className="box__input"/>
             </div>
 
@@ -43,11 +43,11 @@ const [updateTraining, setUpdate] = useState(true)
                 <div className={"box_footer_down"}>
                     <div className={"box_footer_checkbox"}>
                         <input id={"check__input"} type={"checkbox"}/>
-                        <div className={"box_footer_form"}>Formacion</div>
+                        <div className={"box_footer_form"}>Full Stack</div>
                     </div>
                     <div className={"box_footer_checkbox"}>
                         <input id={"check__input"} type={"checkbox"}/>
-                        <div className={"box_footer_form"}>Formacion</div>
+                        <div className={"box_footer_form"}>Front End</div>
                     </div>
                 </div>
             </div>

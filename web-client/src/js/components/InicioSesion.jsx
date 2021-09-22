@@ -69,18 +69,19 @@ export const InicioSesion = () => {
                     </h1>
                     <div className="inicio__input">
                         {(emailDirty && emailError) && <div style={{color: 'red'}}>{emailError}</div>}
-                        {/*<img src={usuario}/>*/}
+                        {/*<img src={usuario}/>*/}🙎‍♀
                         <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} name='email'
-                               type="text" className="inicio__admin" placeholder='🙎‍♀   Administrador...'/>
+                               type="text" className="inicio__admin" placeholder='  Administrador...'/>
                     </div>
                     <div className="inicio__input">
                         {(passwordError && passwordDirty) && <div style={{color: 'red'}}>{passwordError}</div>}
-                        {/*<img src={candado}/>*/}
+                        {/*<img src={candado}/>*/}🔒
                         <input onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)}
                                name='password' type="password"
-                               className="inicio__password" placeholder='🔒   Contraseña...'/>
-                        <div className="inicio__submit">ENTRAR</div>
+                               className="inicio__password" placeholder='  Contraseña...'/>
+
                     </div>
+                    <div className="inicio__submit">ENTRAR</div>
                 </div>
 
             </div>

@@ -5,7 +5,7 @@
   position: absolute;
   top: 60%;
   left: 50%;
-  display: flex;
+  //display: flex;
   transform: translate(-50%, -50%);
   background: none;
   text-align: center;
@@ -28,7 +28,7 @@
 
 .box__input {
   border-radius: 1rem;
-  border: solid orange;
+  border: solid #ff4700;
   background-color: white;
   height: 1.8rem;
   width: 27rem;
@@ -57,7 +57,7 @@
 
 .box_footer_form {
   border-radius: 1rem;
-  border: solid orange;
+  border: solid #ff4700;
   background-color: white;
   height: 1.8rem;
   width: 15rem;
@@ -68,8 +68,8 @@
 .button__admin {
   margin-bottom: -1rem;
   border-radius: 0.5rem;
-  background-color: orange;
-  border-color: orange;
+  background-color: #ff4700;
+  border-color: #ff4700;
   width: 8rem;
   height: 2rem;
 }

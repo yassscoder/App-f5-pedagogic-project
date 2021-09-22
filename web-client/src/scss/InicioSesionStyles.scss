@@ -18,11 +18,10 @@ body, html {
     top: 0;
     left: 0;
     min-width: 100%;
-    min-height: 100%;
+    height: 95%;
     background-repeat: no-repeat;
     opacity: 0.5;
   }
-
 
   &__login {
     max-width: 50rem;
@@ -46,7 +45,7 @@ body, html {
     height: 18rem;
     border-radius: 1rem 0rem 0rem 1rem;
     padding: 2rem;
-    background-color: #f65728;
+    background-color: #ff4700;
   }
 
 
@@ -56,7 +55,7 @@ body, html {
     position: relative;
     text-align: center;
     padding: 3rem 2rem 1px;
-    margin-left: 10.7rem;
+    margin-left: auto;
   }
 
   &__title {
@@ -72,25 +71,25 @@ body, html {
   &__input {
 
     max-height: 30px;
-    padding: 0.2rem;
-    display: flex;
+    padding: 0.3rem;
+    //display: flex;
     border-radius: 0.3rem;
     border-color: #f3f2f2;
-    color: #f65728;
-    margin: 2rem 2rem 2rem 0;
+    color: #ff4700;
+    margin: 2rem 0 2rem 0;
 
   }
 
   &__submit {
     border-radius: 0.3rem;
     padding: 0.2rem;
-    background: #d95826;
+    background: #ff4700;
     color: #fff;
     font-size: 1rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     cursor: pointer;
-    margin-left: 4.5rem;
+    margin-left: 6rem;
     width: 7rem;
     height: 2rem;
     margin-top: 1.5rem;
@@ -103,7 +102,7 @@ body, html {
     width: 20rem;
     margin-left: 13rem;
   }
-  */
+   */
 
 /*  &__input {
     margin: 2rem;
