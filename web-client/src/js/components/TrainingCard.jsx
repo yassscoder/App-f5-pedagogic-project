@@ -12,7 +12,9 @@ export const TrainingCard = (props) =>
 
             <h3 className={"card__info"}>{props.training.promoName}</h3>
             <h3 className={"card__info"}>{props.training.duration}h</h3>
-            <Link className="card__button" to={"/Candidate-list"}>Aspirantes</Link>
+            <div>
+                <Link className="card__button" to={"/Candidate-list"}>Aspirantes</Link>
+            </div>
 
         </div>
     </div>
