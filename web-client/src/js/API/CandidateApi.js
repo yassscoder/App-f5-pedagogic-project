@@ -6,11 +6,11 @@ export class CandidateApi {
 
 
     saveCandidate(Candidate) {
-        return fetch("/candidates",
+        return fetch("/candidates?training_id=" + Candidate.training,
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: Candidate
+                body: JSON.stringify(Candidate)
             }
         )
     }

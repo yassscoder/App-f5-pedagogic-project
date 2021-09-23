@@ -2,6 +2,7 @@ package org.factoriaf5.appf5.controllers;
 import org.factoriaf5.appf5.domain.Candidate;
 import org.factoriaf5.appf5.domain.Training;
 import org.factoriaf5.appf5.repositories.CandidateRepository;
+import org.factoriaf5.appf5.repositories.TrainingRepository;
 import org.factoriaf5.appf5.service.CheckLessonsDone;
 import org.factoriaf5.appf5.service.ResponseFreeCodeCampApi;
 import org.json.JSONException;
@@ -12,18 +13,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CandidateController {
     private CandidateRepository candidateRepository;
     private ResponseFreeCodeCampApi responseFreeCodeCampApi;
     private CheckLessonsDone checkLessonsDone;
+    private TrainingRepository trainingRepository;
 
     @Autowired
-    public CandidateController(CandidateRepository candidateRepository, ResponseFreeCodeCampApi responseFreeCodeCampApi, CheckLessonsDone checkLessonsDone) {
+    public CandidateController(CandidateRepository candidateRepository, ResponseFreeCodeCampApi responseFreeCodeCampApi, CheckLessonsDone checkLessonsDone, TrainingRepository trainingRepository) {
         this.candidateRepository = candidateRepository;
         this.responseFreeCodeCampApi = responseFreeCodeCampApi;
         this.checkLessonsDone = checkLessonsDone;
+        this.trainingRepository = trainingRepository;
     }
 
     @GetMapping("/candidates")
@@ -51,8 +55,15 @@ public class CandidateController {
 
 
     @PostMapping("/candidates")
-    public ResponseEntity<String> addCandidate(@RequestBody Candidate candidate) {
-        candidateRepository.save(candidate);
+    public ResponseEntity<String> addCandidate(@RequestBody Candidate candidate, @RequestParam Long training_id) {
+        Optional<Training> maybeTraining =  trainingRepository.findById(training_id);
+
+        if (maybeTraining.isPresent()) {
+           //  maybeTraining.anhadirCandidato(candidate);
+            trainingRepository.save( maybeTraining.get() );
+        }
+
+
         return new ResponseEntity<>("Created", HttpStatus.OK);
     }
 
