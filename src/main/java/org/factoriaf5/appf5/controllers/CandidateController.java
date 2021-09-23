@@ -59,8 +59,10 @@ public class CandidateController {
         Optional<Training> maybeTraining =  trainingRepository.findById(training_id);
 
         if (maybeTraining.isPresent()) {
-           //  maybeTraining.anhadirCandidato(candidate);
-            trainingRepository.save( maybeTraining.get() );
+            Training training = maybeTraining.get();
+            training.add(candidate);
+            trainingRepository.save( training);
+
         }
 
 

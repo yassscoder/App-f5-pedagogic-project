@@ -67,4 +67,14 @@ public class Training {
     public void setCandidates(List<Candidate> candidates) {
         this.candidates = candidates;
     }
+
+    public List<Candidate> getCandidates() {
+        return candidates;
+    }
+
+    public void add(Candidate candidate) {
+        if (this.candidates != null) {
+            this.candidates.add(candidate);
+        }
+    }
 }
