@@ -2,8 +2,6 @@ import * as React from "react";
 import {useState} from "react";
 import {Redirect} from "react-router-dom";
 import {Formik, Field, Form} from "formik";
-import {TrainingSelect} from "./TrainingSelect";
-
 
 function validateNameOrLastName(value) {
     let error;

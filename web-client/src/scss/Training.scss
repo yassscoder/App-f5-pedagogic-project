@@ -38,6 +38,18 @@ body {
     font-weight: 500;
   }
 
+  &__button{
+
+      padding: 0.4rem;
+      background-color: black;
+      color: white;
+      display: inline-flex;
+      border-radius: 0.3rem;
+      letter-spacing: 0.4rem;
+      font-size: 0.6rem;
+      font-weight:bold;
+
+  }
 }
 
 
