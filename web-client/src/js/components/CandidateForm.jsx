@@ -2,8 +2,6 @@ import * as React from "react";
 import {useState} from "react";
 import {Redirect} from "react-router-dom";
 import {Formik, Field, Form} from "formik";
-import {TrainingSelect} from "./TrainingSelect";
-
 
 function validateNameOrLastName(value) {
     let error;
@@ -74,6 +72,28 @@ function validateUser(value) {
 
 export const CandidateForm = (props) => {
     const [redirect, setRedirect] = useState (false);
+    const [loading, setLoading] = React.useState(true);
+    const [items, setItems] = React.useState([]);
+    const [value, setValue] = React.useState("");
+    React.useEffect(() => {
+        let unmounted = false;
+        async function getTrainingsArray() {
+            const response = await fetch(
+                "http://localhost:8080/trainings"
+            );
+            const body = await response.json();
+            if (!unmounted) {
+                setItems(
+                    body.map(({ id,promoName }) => ({ label: id, value: promoName }))
+                );
+                setLoading(false);
+            }
+        }
+        getTrainingsArray();
+        return () => {
+            unmounted = true;
+        };
+    }, []);
 
     if (redirect){
         return <Redirect to="/candidate-list"/>;
@@ -92,13 +112,21 @@ export const CandidateForm = (props) => {
                 }}
                 onSubmit={
                     (values )=>
-                        props.onSubmit(JSON.stringify(values))
+                        props.onSubmit(values)
                             .then(_ => setRedirect(true))
                 }
             >
                 {({errors, touched}) => <Form>
                     <label htmlFor="training">Formación</label>
-                    <TrainingSelect />
+                    <Field id= "training" name = "training" as = "select"
+                        disabled={loading}>
+
+                        {items.map(({ label, value }) => (
+                            <option key={label} value={label}>
+                                {value}
+                            </option>
+                        ))}
+                    </Field>
                     <label htmlFor="name">Nombre</label>
                     <Field id="name" name="name" validate={validateNameOrLastName}/>
                     {errors.name && touched.name && <div>{errors.name}</div>}
