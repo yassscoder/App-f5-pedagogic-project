@@ -37,9 +37,14 @@ body {
   &__info{
     font-weight: 500;
   }
+  &__buttons__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
 
   &__button{
-
       padding: 0.4rem;
       background-color: black;
       color: white;
@@ -49,6 +54,16 @@ body {
       font-size: 0.6rem;
       font-weight:bold;
 
+  }
+  &__icons {
+    display:flex;
+    gap: 1rem;
+  }
+  &__edit{
+    color: #38608f;
+  }
+  &__delete{
+    color: #b30000;
   }
 }
 
