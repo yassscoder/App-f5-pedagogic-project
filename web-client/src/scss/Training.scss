@@ -24,6 +24,7 @@ body {
   }
   &__city{
     font-weight: bold;
+    color: white;
   }
   &__body{
     background-color: var(--fourth-color);
@@ -61,9 +62,11 @@ body {
   }
   &__edit{
     color: #38608f;
+    cursor: pointer;
   }
   &__delete{
     color: #b30000;
+    cursor: pointer;
   }
 }
 

@@ -1,18 +1,28 @@
 import * as React from "react";
 import "../../scss/Training.scss";
 import {TrainingCard} from "./TrainingCard";
+import {TrainingApi} from "../API/TrainingApi";
 
-export const TrainingList = (props) => (
+const trainingApi=new TrainingApi();
 
-    <section className={"container__cards"}>
+export const TrainingList = ({trainings, onDeleteSuccess}) => {
+
+    const deleteTrainingById = (id) => () => {
+            trainingApi.deleteTraining(id)
+                .then(onDeleteSuccess)
+        }
+
+    return (
+        <section className={"container__cards"}>
 
 
+            {trainings.map((training =>
+                    <TrainingCard  training={training}
+                                   deleteTrainingById={deleteTrainingById}/>
+            ))}
 
-            {props.trainings.map(training =>
-                <TrainingCard training={training}/>
-            )}
 
-
-    </section>
-);
+        </section>
+    );
+}
 

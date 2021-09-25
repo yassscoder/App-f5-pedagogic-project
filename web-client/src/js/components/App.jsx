@@ -11,25 +11,31 @@ import {TrainingApi} from "../API/TrainingApi";
 import {CandidateForm} from "./CandidateForm";
 import {CandidateApi} from "../API/CandidateApi";
 import {CandidateList} from "./CandidateList";
-import {Administrator} from "./Administrator";
+
 
 export const App = () => {
 
     const trainingApi = new TrainingApi()
     const [trainings, setTrainings] = useState([])
-    const [updateTraining, setUpdate] = useState(true)
+   const [updateTraining, setUpdate] = useState(true)
 
     const candidateApi = new CandidateApi()
     const [candidates, setCandidates] = useState([])
     const [updateCandidate, setUpdateCandidate] = useState(true)
 
-    useEffect(() => {
-        if (updateTraining){
-            trainingApi.getTrainings()
-                .then(setTrainings)
-                .then(_=> setUpdate(false))
-        }
-    }, [updateTraining])
+
+    function reloadTrainings(){
+        trainingApi.getTrainings().then(setTrainings)
+    }
+     useEffect(reloadTrainings, [])
+
+    // useEffect(() => {
+    //     if (updateTraining){
+    //         trainingApi.getTrainings()
+    //             .then(setTrainings)
+    //             .then(_=> setUpdate(false))
+    //     }
+    // }, [updateTraining])
 
     useEffect(() => {
         if (updateCandidate){
@@ -56,7 +62,8 @@ export const App = () => {
                     <InicioSesion/>
                 </Route>
                     <Route path="/training-list">
-                        <TrainingList trainings={trainings}/>
+                        <TrainingList trainings={trainings}
+                                      onDeleteSuccess={reloadTrainings}/>
                     </Route>
                     <Route path="/training-form">
                         <TrainingForm onSubmit={saveTraining}/>
@@ -64,14 +71,12 @@ export const App = () => {
 
                     <Route  path="/Candidate-list">
                      <CandidateList candidates={candidates}/>
+
                     </Route>
                     <Route  path="/Candidate-form">
                         <CandidateForm onSubmit={saveCandidate}/>
                     </Route>
 
-                <Route path="/administrator">
-                    <Administrator/>
-                </Route>
 
             </Switch>
 

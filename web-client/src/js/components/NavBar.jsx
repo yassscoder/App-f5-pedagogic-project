@@ -11,21 +11,21 @@ export const NavBar = () => (
             </div>
             <ul className={"nav-main__list"}>
                 <li className={"nav-main__item"}>
-                    <Link to={"/training-form"} className={"nav-main__link nav-main__link--adm"} >Training Form</Link>
+                    <Link to={"/training-form"} className={"nav-main__link nav-main__link--adm"} >Nueva formación</Link>
                 </li>
                 <li className={"nav-main__item"}>
-                    <Link to={"/training-list"} className={"nav-main__link nav-main__link--cs"}>Training List</Link>
+                    <Link to={"/training-list"} className={"nav-main__link nav-main__link--cs"}>Formaciones</Link>
                 </li>
                 <li className={"nav-main__item"}>
-                    <Link to={"/candidate-form"} className={"nav-main__link nav-main__link--cf"}>Candidate Form</Link>
+                    <Link to={"/candidate-form"} className={"nav-main__link nav-main__link--cf"}>Nuevo aspirante</Link>
                 </li>
-                <li className={"nav-main__item"}>
-                    <Link to={"/candidate-list"} className={"nav-main__link nav-main__link--cl"}>Candidate List</Link>
-                </li>
+                {/*<li className={"nav-main__item"}>*/}
+                {/*    <Link to={"/candidate-list"} className={"nav-main__link nav-main__link--cl"}>Candidate List</Link>*/}
+                {/*</li>*/}
 
-                <li className={"nav-main__item"}>
-                    <Link to={"/administrator"} className={"nav-main__link nav-main__link--cl"}>Administrator</Link>
-                </li>
+                {/*<li className={"nav-main__item"}>*/}
+                {/*    <Link to={"/administrator"} className={"nav-main__link nav-main__link--cl"}>Administrator</Link>*/}
+                {/*</li>*/}
             </ul>
         </nav>
 )

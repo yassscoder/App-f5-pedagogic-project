@@ -40,10 +40,10 @@ public class TrainingController {
          return ResponseEntity.of(training);
     }
     // no hay lista, solo necesitamos path variable porque solo pediremos una parte del "objeto" que y será encontrado por id)
-    @GetMapping("/trainings/list_candidates/{id}")
-    public List<Candidate> getCandidatesFromTraining(@PathVariable Long id){
+    @GetMapping("/trainings/list_candidates")
+    public List<Candidate> getCandidatesFromTraining(@RequestParam Long training_id){
 
-        List<Candidate> candidate= trainingRepository.findById(id).get().getCandidates();
+        List<Candidate> candidate= trainingRepository.findById(training_id).get().getCandidates();
 
         return candidate;
     }

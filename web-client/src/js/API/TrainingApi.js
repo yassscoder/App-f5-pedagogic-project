@@ -13,4 +13,9 @@ export class TrainingApi {
             }
         )
     }
+    deleteTraining(id) {
+        return fetch(`http://localhost:8080/trainings/${id}`, {
+            method: 'DELETE'
+        })
+    }
 }
