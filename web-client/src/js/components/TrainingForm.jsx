@@ -29,7 +29,7 @@ function validatePromo(value) {
 
         error = 'Campo obligatorio';
 
-    } else if (!/^[A-Za-zäÄëËïÏöÖüÜáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-\u00f1\u00d1\-.]{4,64}$/i.test(value)) {
+    } else if (!/^[A-Za-zäÄëËïÏöÖüÜáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-\u00f1\u00d1\-. ]{4,64}$/i.test(value)) {
 
         error = 'La promoción debe contener al menos 4 letras, números, . - ( )';
 
