@@ -30,12 +30,37 @@ public class CandidateController {
         this.trainingRepository = trainingRepository;
     }
 
-    @GetMapping("/candidates")
-    public List<Candidate> allCandidates() throws IOException, InterruptedException {
-        List<Candidate> candidates = candidateRepository.findAll();
+//    @GetMapping("/candidates")
+//    public List<Candidate> allCandidates() throws IOException, InterruptedException {
+//        List<Candidate> candidates = candidateRepository.findAll();
+//        for (int i = 0; i < candidates.size(); i++) {
+//            try {
+//                var completedChallenges = responseFreeCodeCampApi.getCompletedChallenge(candidates.get(i).getUserFree()); //user05
+//                var numeroEjs = checkLessonsDone.getLessonsDone(completedChallenges);
+//
+//                var htmlExercises = numeroEjs.get(0);
+//                var jsExercises = numeroEjs.get(1);
+//                var cssExercises = numeroEjs.get(2);
+//
+//                candidates.get(i).setCompletedHtml(String.valueOf(htmlExercises));
+//                candidates.get(i).setCompletedJS(String.valueOf(jsExercises));
+//                candidates.get(i).setCompletedCss(String.valueOf(cssExercises));
+//            } catch (JSONException exception) {
+//                System.out.println(" Error al acceder al usuario de Free code camp:" + (candidates.get(i).getUserFree()));
+//            }
+//        }
+//
+//        return candidates;
+//    }
+    @GetMapping("/candidates/list_candidates")
+
+    public List<Candidate> getCandidatesFromTraining(@RequestParam Long training_id)  throws IOException, InterruptedException {
+
+        List<Candidate> candidates= trainingRepository.findById(training_id).get().getCandidates();
+
         for (int i = 0; i < candidates.size(); i++) {
             try {
-                var completedChallenges = responseFreeCodeCampApi.getCompletedChallenge(candidates.get(i).getUserFree()); //user05
+                var completedChallenges = responseFreeCodeCampApi.getCompletedChallenge(candidates.get(i).getUserFree());
                 var numeroEjs = checkLessonsDone.getLessonsDone(completedChallenges);
 
                 var htmlExercises = numeroEjs.get(0);
@@ -45,7 +70,12 @@ public class CandidateController {
                 candidates.get(i).setCompletedHtml(String.valueOf(htmlExercises));
                 candidates.get(i).setCompletedJS(String.valueOf(jsExercises));
                 candidates.get(i).setCompletedCss(String.valueOf(cssExercises));
+
             } catch (JSONException exception) {
+                candidates.get(i).setCompletedHtml(String.valueOf(0));
+                candidates.get(i).setCompletedJS(String.valueOf(0));
+                candidates.get(i).setCompletedCss(String.valueOf(0));
+
                 System.out.println(" Error al acceder al usuario de Free code camp:" + (candidates.get(i).getUserFree()));
             }
         }
@@ -61,10 +91,8 @@ public class CandidateController {
         if (maybeTraining.isPresent()) {
             Training training = maybeTraining.get();
             training.add(candidate);
-            trainingRepository.save( training);
-
+            trainingRepository.save(training);
         }
-
 
         return new ResponseEntity<>("Created", HttpStatus.OK);
     }

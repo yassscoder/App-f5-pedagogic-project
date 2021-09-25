@@ -1,7 +1,7 @@
 export class CandidateApi {
             //DEBERÍA HACER FETCH A + ID para mostrar el listado de candidatos según la formación
     getCandidates() {
-        return fetch("http://localhost:8080/trainings/list_candidates?training_id=1")
+        return fetch("http://localhost:8080/candidates/list_candidates?training_id=" + 2)
             .then(response => response.json())
 
     }
