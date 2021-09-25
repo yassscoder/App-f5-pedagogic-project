@@ -10,7 +10,7 @@ function validateNameOrLastName(value) {
 
         error = 'Campo obligatorio';
 
-    } else if (!/^[a-zA-z]{2,64}$/i.test(value)) {
+    } else if (!/^[ A-Za-zäÄëËïÏöÖüÜáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-\u00f1\u00d1]{2,64}$/i.test(value)) {
 
         error = 'El campo ha de contener al menos 2 letras';
 

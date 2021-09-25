@@ -39,6 +39,5 @@ public class ResponseFreeCodeCampApi {
 
         return completedChallenges;
 
-
     }
 }

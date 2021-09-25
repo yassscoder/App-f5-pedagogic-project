@@ -1,3 +1,4 @@
+
 package org.factoriaf5.appf5.service;
 
 import org.json.JSONArray;
@@ -6,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Component
 public class CheckLessonsDone {
@@ -39,9 +41,7 @@ public class CheckLessonsDone {
         listTotalExercises.add(htmlCounter);
         listTotalExercises.add(jsCounter);
         listTotalExercises.add(cssCounter);
-
         return listTotalExercises; //posicion 0: cuentaHTML; posicion 1:cuentaJS; posicion 2:cuentaCSS
-
+    }
     }
 
-}
