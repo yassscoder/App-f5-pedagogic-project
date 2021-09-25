@@ -16,8 +16,7 @@ public class Training {
     private Integer duration;
 
     @OneToMany (
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            cascade = CascadeType.ALL
     )
     @JoinColumn(name = "training_id")
     private List<Candidate> candidates;

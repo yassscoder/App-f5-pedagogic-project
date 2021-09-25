@@ -1,7 +1,8 @@
-/*
+
 package org.factoriaf5.appf5.integrationTest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.factoriaf5.appf5.domain.Candidate;
 import org.factoriaf5.appf5.domain.Training;
 import org.factoriaf5.appf5.repositories.TrainingRepository;
 import org.hamcrest.Matchers;
@@ -13,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -40,11 +42,13 @@ public class TrainingsTest {
         trainingRepository.deleteAll();
     }
 
+    private List<Candidate> candidate = new ArrayList<>();
+
     @Test
     void returnsAvailableTrainings() throws Exception {
         List<Training> trainings = List.of(
-                new Training(1L, "Barcelona", "Femtech P1", 850),
-                new Training(2L, "Madrid", "Front P3", 300)
+                new Training(1L, "Barcelona", "Femtech P1", 850, candidate),
+                new Training(2L, "Madrid", "Front P3", 300, candidate)
         );
 
         trainingRepository.saveAll(trainings);
@@ -63,7 +67,9 @@ public class TrainingsTest {
 
     @Test
     void createsNewTrainings() throws Exception {
-        Training training = new Training(1L, "Barcelona", "Femtech P1", 850);
+
+
+        Training training = new Training(1L, "Barcelona", "Femtech P1", 850, candidate );
         mockMvc.perform(post("/trainings")
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(training)))
@@ -82,11 +88,10 @@ public class TrainingsTest {
     }
 
 
-
     @Test
     void returnsTrainingById() throws Exception {
         Training training = trainingRepository.save(
-                new Training(1L, "Barcelona", "Femtech P1", 850)
+                new Training(1L, "Barcelona", "Femtech P1", 850, candidate)
         );
 
 
@@ -100,7 +105,7 @@ public class TrainingsTest {
     @Test
     void deleteTrainingById() throws Exception {
         Training training = trainingRepository.save(
-                new Training(1L, "Barcelona", "Femtech P1", 850)
+                new Training(1L, "Barcelona", "Femtech P1", 850, candidate)
         );
 
 
@@ -114,7 +119,7 @@ public class TrainingsTest {
     @Test
     void editAnExistingTraining() throws Exception {
         Training training = trainingRepository.save(
-                new Training(1L, "Barcelona", "Femtech P1", 850));
+                new Training(1L, "Barcelona", "Femtech P1", 850, candidate));
         mockMvc.perform(put("/trainings")
                 .contentType("application/json")
                 .content("{\"id\":\"" + training.getId() + "\", \"city\": \"Gijón\", \"promoName\": \"Full stack\", \"duration\": \"850\"}")
@@ -127,4 +132,4 @@ public class TrainingsTest {
                 hasProperty("duration", is(850))
         )));
     }
-}*/
+}
