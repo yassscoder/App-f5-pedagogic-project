@@ -29,13 +29,13 @@ export const App = () => {
     }
      useEffect(reloadTrainings, [])
 
-    // useEffect(() => {
-    //     if (updateTraining){
-    //         trainingApi.getTrainings()
-    //             .then(setTrainings)
-    //             .then(_=> setUpdate(false))
-    //     }
-    // }, [updateTraining])
+    useEffect(() => {
+        if (updateTraining){
+            trainingApi.getTrainings()
+                .then(setTrainings)
+                .then(_=> setUpdate(false))
+        }
+    }, [updateTraining])
 
     useEffect(() => {
         if (updateCandidate){
