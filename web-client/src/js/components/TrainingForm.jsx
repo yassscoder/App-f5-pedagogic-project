@@ -10,11 +10,11 @@ function validateCity(value) {
 
     if (!value) {
 
-        error = 'Required';
+        error = 'Campo obligatorio';
 
-    } else if (!/^[a-zA-z]{3,64}$/i.test(value)) {
+    } else if (!/^[A-Za-zäÄëËïÏöÖüÜáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-\u00f1\u00d1]{3,64}$/i.test(value)) {
 
-        error = 'La ciudad ha de contener al menos 3 caracteres de la A-Z';
+        error = 'La ciudad debe contener al menos 3 caracteres de la A-Z';
 
     }
 
@@ -27,11 +27,11 @@ function validatePromo(value) {
 
     if (!value) {
 
-        error = 'Required';
+        error = 'Campo obligatorio';
 
-    } else if (!/^[\w\-. \(\)]{4,64}$/i.test(value)) {
+    } else if (!/^[A-Za-zäÄëËïÏöÖüÜáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-\u00f1\u00d1\-. ]{4,64}$/i.test(value)) {
 
-        error = 'Ha de contenter al menos 4 letras, números, . - ( )';
+        error = 'La promoción debe contener al menos 4 letras, números, . - ( )';
 
     }
 
@@ -44,12 +44,11 @@ function validateDuration(value){
 
     if (!value) {
 
-        error = 'Required';
+        error = 'Campo obligatorio';
 
     } else if (!/^[0-9]{1,4}$/i.test(value)) {
 
-        error = 'Sólo números permitidos';
-
+        error = 'Sólo se aceptan números'
     }
 
     return error;
