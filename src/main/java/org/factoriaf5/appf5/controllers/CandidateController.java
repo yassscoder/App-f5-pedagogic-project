@@ -78,9 +78,37 @@ public class CandidateController {
 
                 System.out.println(" Error al acceder al usuario de Free code camp:" + (candidates.get(i).getUserFree()));
             }
+
         }
 
+        for (int i = 0; i < candidates.size(); i++) {
+            try {
+             var doneHtmlInteger = Integer.parseInt(candidates.get(i).getCompletedHtml());
+                float percentageHtml = (((float) (doneHtmlInteger * 100)) / 28);
+                var formattedPercentageHtml = String.format("%.02f", percentageHtml);
+
+
+                var doneJSInteger=Integer.parseInt(candidates.get(i).getCompletedJS());
+                float percentageJS = (((float) (doneJSInteger * 100)) / 73);
+                var formattedPercentageJS = String.format("%.02f", percentageJS);
+
+                var doneCssInteger=Integer.parseInt(candidates.get(i).getCompletedCss());
+                float percentageCss = (((float) (doneCssInteger * 100)) / 44);
+                var formattedPercentageCss = String.format("%.02f", percentageCss);
+
+
+                candidates.get(i).setCompletedHtml(formattedPercentageHtml);
+                candidates.get(i).setCompletedJS(formattedPercentageJS);
+                candidates.get(i).setCompletedCss(formattedPercentageCss);
+
+
+
+            }catch (NullPointerException exception) {
+                System.out.println("usuario nulo");
+            }
+        }
         return candidates;
+
     }
 
 
