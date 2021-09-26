@@ -82,31 +82,27 @@ public class CandidateController {
         }
 
         for (int i = 0; i < candidates.size(); i++) {
-            try {
-             var doneHtmlInteger = Integer.parseInt(candidates.get(i).getCompletedHtml());
-                float percentageHtml = (((float) (doneHtmlInteger * 100)) / 28);
-                var formattedPercentageHtml = String.format("%.02f", percentageHtml);
+
+            var doneHtmlInteger = Integer.parseInt(candidates.get(i).getCompletedHtml());
+            float percentageHtml = (((float) (doneHtmlInteger * 100)) / 28);
+            var percentageHtmlMath = Math.floor(percentageHtml);
+            var formattedPercentageHtml = String.format("%.0f", percentageHtmlMath);
 
 
-                var doneJSInteger=Integer.parseInt(candidates.get(i).getCompletedJS());
-                float percentageJS = (((float) (doneJSInteger * 100)) / 73);
-                var formattedPercentageJS = String.format("%.02f", percentageJS);
+            var doneJSInteger = Integer.parseInt(candidates.get(i).getCompletedJS());
+            float percentageJS = (((float) (doneJSInteger * 100)) / 73);
+            var formattedPercentageJS = String.format("%.0f", Math.floor(percentageJS));
 
-                var doneCssInteger=Integer.parseInt(candidates.get(i).getCompletedCss());
-                float percentageCss = (((float) (doneCssInteger * 100)) / 44);
-                var formattedPercentageCss = String.format("%.02f", percentageCss);
-
-
-                candidates.get(i).setCompletedHtml(formattedPercentageHtml);
-                candidates.get(i).setCompletedJS(formattedPercentageJS);
-                candidates.get(i).setCompletedCss(formattedPercentageCss);
+            var doneCssInteger = Integer.parseInt(candidates.get(i).getCompletedCss());
+            float percentageCss = (((float) (doneCssInteger * 100)) / 44);
+            var formattedPercentageCss = String.format("%.0f", Math.floor(percentageCss));
 
 
-
-            }catch (NullPointerException exception) {
-                System.out.println("usuario nulo");
-            }
+            candidates.get(i).setCompletedHtml(formattedPercentageHtml);
+            candidates.get(i).setCompletedJS(formattedPercentageJS);
+            candidates.get(i).setCompletedCss(formattedPercentageCss);
         }
+
         return candidates;
 
     }
