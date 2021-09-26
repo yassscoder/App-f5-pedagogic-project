@@ -16,4 +16,10 @@ export class CandidateApi {
             }
         )
     }
+    deleteCandidate(id) {
+        return fetch(`http://localhost:8080/candidates/${id}`, {
+            method: 'DELETE'
+        })
+    }
+
 }

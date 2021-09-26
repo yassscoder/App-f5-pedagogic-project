@@ -29,6 +29,11 @@ export const App = () => {
     }
      useEffect(reloadTrainings, [])
 
+    function reloadCandidates(){
+        candidateApi.getCandidates().then(setCandidates)
+    }
+    useEffect(reloadCandidates, [])
+
     useEffect(() => {
         if (updateTraining){
             trainingApi.getTrainings()
@@ -70,7 +75,8 @@ export const App = () => {
                     </Route>
 
                     <Route  path="/Candidate-list">
-                     <CandidateList candidates={candidates}/>
+                     <CandidateList candidates={candidates}
+                                    successfullyDeleted={reloadCandidates}/>
 
                     </Route>
                     <Route  path="/Candidate-form">

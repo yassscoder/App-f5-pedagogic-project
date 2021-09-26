@@ -105,4 +105,9 @@ public class CandidateController {
         candidateRepository.save(candidate);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @DeleteMapping("/candidates/{id}")
+    public void deleteById(@PathVariable Long id) {
+        candidateRepository.deleteById(id);
+    }
 }

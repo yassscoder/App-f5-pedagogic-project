@@ -50,5 +50,9 @@ body {
   &__icon {
     color: var(--third-color);
   }
+  &__wrapper__icons{
+    display: flex;
+    gap: 1.5rem;
+  }
 }
 

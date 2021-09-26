@@ -2,8 +2,15 @@ import * as React from "react";
 import "../../scss/Candidates.scss";
 
 import {CandidatesTable} from "./CandidatesTable";
+import {CandidateApi} from "../API/CandidateApi";
+const candidateApi = new CandidateApi();
+export const CandidateList = ({candidates, successfullyDeleted}) => {
 
-export const CandidateList = (props) => (
+    const deleteCandidateById = (id) => () => {
+        candidateApi.deleteCandidate(id)
+            .then(successfullyDeleted)
+    }
+    return (
     <div className={"table__container"}>
     <table className={"table"}>
         <thead>
@@ -16,11 +23,12 @@ export const CandidateList = (props) => (
 
         </thead>
         <tbody className={"table__body"}>
-        {props.candidates.map(candidate =>
-            <CandidatesTable candidate={candidate}/>
-        )}
+        {candidates.map((candidate =>
+            <CandidatesTable candidate={candidate}
+                             deleteCandidateById={deleteCandidateById}/>
+        ))}
         </tbody>
     </table>
     </div>
 );
-
+}
